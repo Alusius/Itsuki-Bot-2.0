@@ -39,9 +39,10 @@ const defaultMenu = {
 │ ✾ Role: %role
 ╰❑
 ╭─❑ 「 INFORMASI 」 ❑──
-│ Bot ini masih tahap beta
-│ apabila ada bug/eror harap
-│ lapor ke owner
+│ mohon maaf untuk fitur game
+│ belum bisa di gunakan
+│ maklumin owner yang susah
+│ kalau ngabisin duit
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
