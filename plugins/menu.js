@@ -40,9 +40,9 @@ const defaultMenu = {
 ╰❑
 ╭─❑ 「 INFORMASI 」 ❑──
 │ mohon maaf untuk fitur game
-│ belum bisa di gunakan
-│ maklumin owner yang susah
-│ kalau ngabisin duit
+│ belum bisa di gunakan.
+│ maklumin owner yang maunya
+│ irit.
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
