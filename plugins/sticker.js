@@ -26,8 +26,7 @@ let handler = async (m, { conn }) => {
         throw e
     }
     finally {
-        if (stiker) {
-            m.reply(stiker_wait)
+        if (stiker) {           
             await conn.sendFile(m.chat, stiker, '', '', m)
         }
         else {
