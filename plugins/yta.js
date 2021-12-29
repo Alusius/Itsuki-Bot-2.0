@@ -1,24 +1,20 @@
 let limit = 1024
 const { servers, yta } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
+  if (!args || !args[0]) throw `contoh:\n${usedPrefix + command} https://www.youtube.com/watch?v=yxDdj_G9uRY`
   let chat = global.db.data.chats[m.chat]
   let server = (args[1] || servers[0]).toLowerCase()
-  let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
+  let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
-`.trim(), m)
+  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : global.wait)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
+*Judul:* ${title}
+*Ukuran File:* ${filesizeF}
 `.trim(), m, null, {
-  asDocument: chat.useDocument
-})
+    asDocument: chat.useDocument, mimetype: 'audio/mp4'
+  })
 }
-handler.help = ['mp3','a'].map(v => 'yt' + v + ' <url>')
+handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
 handler.tags = ['downloader']
 handler.command = /^yt(a|mp3)$/i
 handler.owner = false
@@ -32,7 +28,6 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 0
-handler.limit = true
+handler.limit = 3
 
 module.exports = handler
-
