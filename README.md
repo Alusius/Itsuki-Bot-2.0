@@ -7,7 +7,6 @@
 <a href="#"><img title="EBOT MULTI DEVICE" src="https://img.shields.io/badge/SHIRAORI BOT MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/Paquito1923"><img title="Author" src="https://?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 <a href="https://github.com/Paquito1923/elyasmd"><img title="Followers" src="https://img.shields.io/github/followers/Paquito1923?color=blue&style=flat-square"></a>
