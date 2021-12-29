@@ -8,6 +8,6 @@ handler.command = /^re(voke|new)(invite|link)?$/i
 handler.group = true
 
 handler.admin = true
-handler.botAdmin = true
+handler.botAdmin = false
 
 module.exports = handler
