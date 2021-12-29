@@ -10,6 +10,9 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+
+Jika Audio tidak di kirim ataupun error
+Kamu bisa mendownloadnya langsung dengan klik link di atas
 `.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 *Title:* ${title}
