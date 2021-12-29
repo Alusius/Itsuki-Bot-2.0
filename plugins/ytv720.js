@@ -21,7 +21,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
       asDocument: chat.useDocument
     })
   } catch (e) {
-    return awaut m.reply('Server Error')
+    return await m.reply('Server Error')
 }
 handler.help = ['mp4', 'v', ''].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
 handler.tags = ['downloader']
