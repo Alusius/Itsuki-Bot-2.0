@@ -4,7 +4,7 @@
 
 </p>
 <p align="center">
-<a href="#"><img title="EBOT MD" src="https://img.shields.io/badge/GANTI SESSIONNYA DULU SEBELUM PAKAI-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="EBOT MD" src="https://img.shields.io/badge/GANTI SESSIONNYA DULU SEBELUM PAKAI-red?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
 </p>
