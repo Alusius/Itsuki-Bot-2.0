@@ -52,15 +52,22 @@ ${vid.url}
            },
                {
              quickReplyButton: {
-               displayText: 'Audio',
-               id: `.ytmp3 ${vid.url}`,
+               displayText: 'video(360)',
+               id: `.ytmp4 ${vid.url}`,
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'Video',
-               id: `.ytmp4 ${vid.url}`,
+               displayText: 'video(720)',
+               id: `.yt720p ${vid.url}`,
+             }
+
+           },
+               {
+             quickReplyButton: {
+               displayText: 'Audio',
+               id: `.ytmp3 ${vid.url}`,
              }
 
            }]
