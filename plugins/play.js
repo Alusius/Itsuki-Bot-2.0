@@ -52,18 +52,11 @@ ${vid.url}
            },
                {
              quickReplyButton: {
-               displayText: 'video(360)',
+               displayText: 'video',
                id: `.ytmp4 ${vid.url}`,
              }
 
-           },
-               {
-             quickReplyButton: {
-               displayText: 'video(720)',
-               id: `.yt720p ${vid.url}`,
-             }
-
-           },
+            },
                {
              quickReplyButton: {
                displayText: 'Audio',
