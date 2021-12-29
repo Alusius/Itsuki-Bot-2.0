@@ -4,7 +4,7 @@
 
 </p>
 <p align="center">
-<a href="#"><img title="EBOT MULTI DEVICE" src="https://img.shields.io/badge/SHIRAORI BOT MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="GANTI DULU SESSION NYA SEBELUM PAKAI" src="https://img.shields.io/badge/SHIRAORI BOT MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
 </p>
