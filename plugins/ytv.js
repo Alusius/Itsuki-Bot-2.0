@@ -11,6 +11,9 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+
+Jika Video tidak dikirim Ataupun Error
+Kamu bisa mendownloadnya langsung lewat link di atas
 `.trim(), m)
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
