@@ -14,7 +14,7 @@ let handler = async (m, { conn }) => {
             if (!img) throw `reply image with command s`
             stiker = await sticker5(img, false, packname, author)
         } else if (/video/.test(mime)) {
-            if ((q.msg || q).seconds > 11) return m.reply('max is 10 seconds!')
+            if ((q.msg || q).seconds > 11) return m.reply('maksimal 10 detik!')
             let img = await q.download()
             if (!img) throw `reply video with command s`
             stiker = await sticker5(img, false, packname, author)
