@@ -13,7 +13,7 @@ let handler = async (m, { conn, text }) => {
   await conn.sendFile(m.chat, img.url_image, 'wallpaper', 'Nih wallpaper!', m)
 }
 handler.help = ['wallpaperq <query>']
-handler.tags = ['image']
+handler.tags = ['internet']
 handler.command = /^wall(paper)?q?$/i
 handler.limit = true
 
