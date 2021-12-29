@@ -124,6 +124,7 @@ pkg install yarn
 git clone https://github.com/Paquito1923/elyasmd
 cd elyasmd
 yarn
+rm -rf session.data.json
 node .
 ```
 
