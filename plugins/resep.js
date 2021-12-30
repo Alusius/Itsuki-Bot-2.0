@@ -19,7 +19,7 @@ let handler = async(m, { conn, text }) => {
     })
 }
 handler.help = ['resep'].map(v => v + ' <masakan>')
-handler.tags = ['search']
+handler.tags = ['internet']
 handler.command = /^(resep)$/i
 handler.owner = false
 handler.mods = false
