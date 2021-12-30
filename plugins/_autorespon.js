@@ -13,7 +13,7 @@ handler.all = async function (m, { isBlocked }) {
     // ketika ditag
     try {
         if (m.mentionedJid.includes(this.user.jid) && m.isGroup) {
-            await m.reply(m.chat,'Harap Jangan Tag saya!\n\nSaya sedang tidur tidur', m)
+            await m.reply('Harap Jangan Tag saya!\n\nSaya sedang tidur tidur')
         }
     } catch (e) {
         return
@@ -21,14 +21,14 @@ handler.all = async function (m, { isBlocked }) {
 
     // ketika ada yang invite/kirim link grup di chat pribadi
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
-        m.reply(m.chat, `┌〔 Undang Bot ke Grup 〕
+        m.reply(`┌〔 Undang Bot ke Grup 〕
 ├ 1 Hari / GRATIS 
 ├ 7 Hari / Rp7.000
 ├ 30 Hari / Rp10.000
 ├ udah izin ke owner 
 ├ *GRATIS*
 └────
-`.trim(), m)
+`.trim())
     }
 
     // salam
