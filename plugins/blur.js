@@ -1,5 +1,3 @@
-// Tolong jangan bully saya bang,, saya cuman mau bisnis :)
-
 let uploadImage = require('../lib/uploadImage')
 let fetch = require('node-fetch')
 let util = require('util')
@@ -34,7 +32,7 @@ handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-handler.register = true
+handler.register = false
 
 handler.admin = false
 handler.botAdmin = false
