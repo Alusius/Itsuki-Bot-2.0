@@ -12,6 +12,7 @@ let tags = {
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
   'maker': 'MENU MAKER',
+  'editor': 'MENU EDITOR',
   'github': 'MENU GITHUB',
   'quotes' : 'MENU QUOTES',
   'internet': 'INTERNET',
