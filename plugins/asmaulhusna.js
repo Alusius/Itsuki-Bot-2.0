@@ -21,7 +21,7 @@ Artinya: "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias serat
     m.reply(contoh + data + anjuran)
 }
 handler.help = ['asmaulhusna [nomor]']
-handler.tags = ['quran']
+handler.tags = ['islam']
 handler.command = /^(asmaulhusna)$/i
 module.exports = handler
 
