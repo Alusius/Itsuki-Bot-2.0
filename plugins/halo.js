@@ -18,7 +18,7 @@ Tekan MENU`
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: gambar() }, 
-           hydratedFooterText: `uptime: ${uptime}`,
+           hydratedFooterText: `Runtime: ${uptime}`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',
