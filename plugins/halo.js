@@ -8,14 +8,15 @@ let handler = async (m) => {
     let user = global.db.data.users[who]
 let anu = `${ucapan()}
 Halo👋
-Ada Yang Bisa Saya Bantu?`
+Ada Yang Bisa Saya Bantu?
+Tekan MENU`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: gambar() }, 
-           hydratedFooterText: 'Tekan Menu',
+           hydratedFooterText: `uptime: ${uptime}`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',
