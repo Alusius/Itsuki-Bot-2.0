@@ -1,6 +1,6 @@
 let handler = async m => m.reply(`
 ┏ ┅ ━━━━━━━━━━━━ ┅ ━
-┇       *「 Anime 」*
+┇       *「 ANIME LINK 」*
 ┣ ┅ ━━━━━━━━━━━━ ┅ ━
 ┃ ❖ https://kusonime.com
 ┃ ❖ https://anoboy.media
