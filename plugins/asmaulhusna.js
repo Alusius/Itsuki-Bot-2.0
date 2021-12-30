@@ -8,7 +8,7 @@ let handler = async (m, { args }) => {
         let { index, latin, arabic, translation_id, translation_en } = json.result.data.find(v => v.index == args[0])
         return m.reply(`No. ${index}
 
-${latin} 
+*${latin}*
 ${arabic}
 ${translation_id} 
 ${translation_en}  
