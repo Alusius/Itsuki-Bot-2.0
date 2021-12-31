@@ -15,7 +15,7 @@ Halooo👋`
          hydratedTemplate: {
            hydratedContentText: anu,
            locationMessage: { 
-           jpegThumbnail: fs.readFileSync('./media/waalaikumussalam.jpg') }, 
+           jpegThumbnail: fs.readFileSync('./media/waalaikumusalam.jpg') }, 
            hydratedFooterText: `Stay halal`,
            hydratedButtons: [{
              urlButton: {
