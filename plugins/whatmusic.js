@@ -20,13 +20,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                 		.then(({data}) =>{
 				  m.reply(`*Lagu Ditemukan!*\n\n*Judul* : ${data.data.title}\n*Artist* : ${data.data.artists}\n*Genre* : ${data.data.genre}\n*Album* : ${data.data.album}\n*Release* : ${data.data.release_date}`)
 				}).catch(() => {
-				m.reply('Lagu Tidak Ditemukan!\n\n*mungkin kamu nyari dj remix indo?*')
+				m.reply('Lagu Tidak Ditemukan!\n\n*Kalau kamu cari judul dj remix indo agak susah*')
 				})
 				
 }
-handler.help = ['whatmusic']
+handler.help = ['judullagu']
 handler.tags = ['tools']
 
-handler.command = /^(whatmusic)$/i
+handler.command = /^(judullagu)$/i
 
 module.exports = handler
