@@ -11,7 +11,7 @@ conn.sendFile( m.chat, url, url, null, m)
 }
 handler.help = ['githubdl']
 handler.tags = ['github']
-handler.command = /gihubdl/i
+handler.command = /githubdl/i
 
 handler.limit = true
 
