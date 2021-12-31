@@ -6,7 +6,8 @@ let handler = async (m, {conn}) => {
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     else who = m.sender
     let user = global.db.data.users[who]
-let anu = `وَعَلَيْكُمْ السَّلاَمُ
+let anu = `وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
+_wa'alaikumussalam wr.wb._
 Halooo👋`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
