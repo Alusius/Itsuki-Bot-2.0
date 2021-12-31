@@ -20,16 +20,17 @@
         "whatsapp",
         "js-whatsapp",
         "whatsapp",
-        "ShiraoriBOT",
-        "wabot-aq"
+        "elyasmd",
+        "wabot-aq",
+        "wabot-aq-md"
     ],
-    "homepage": "https://github.com/ilmanhdyt/ShiraoriBOT-Md",
+    "homepage": "https://github.com/Paquito1923/elyasmd",
     "author": {
-        "name": "Ilman"
+        "name": "Elyas"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ilmanhdyt/ShiraoriBOT-Md.git"
+        "url": "git+https://github.com/Paquito1923/elyasmd.git"
     },
     "bugs": {
         "url": "https://github.com/ilmanhdyt/ShiraoriBOT-Md/issues"
