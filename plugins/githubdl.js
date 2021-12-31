@@ -9,9 +9,9 @@ m.reply(`compressing data to file zip*`)
 conn.sendFile( m.chat, url, `${args[1]} ${args[2]}.zip`, null, m)
 
 }
-handler.help = ['ghdl']
+handler.help = ['githubdl']
 handler.tags = ['download']
-handler.command = /ghdl/i
+handler.command = /githubdl/i
 
 handler.limit = true
 
