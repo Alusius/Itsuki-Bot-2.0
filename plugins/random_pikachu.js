@@ -17,7 +17,7 @@ Pikacu
 }
 
 handler.help = ['pikachu']
-handler.tags = ['images']
+handler.tags = ['image']
 handler.command = /^pikachu$/i
 
 handler.fail = null
