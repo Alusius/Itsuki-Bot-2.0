@@ -10,7 +10,7 @@ conn.sendFile( m.chat, url, `${args[1]} ${args[2]}.zip`, null, m)
 
 }
 handler.help = ['githubdl']
-handler.tags = ['download']
+handler.tags = ['github']
 handler.command = /githubdl/i
 
 handler.limit = true
