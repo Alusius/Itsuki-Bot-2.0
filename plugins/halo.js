@@ -4,6 +4,13 @@ let fs = require('fs')
 let handler = async (m, {conn}) => {
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
+    const time = moment.tz('Asia/Jakarta').format('HH:mm')
+    let d = new Date
+    let date = d.toLocaleDateString('id', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    })
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     else who = m.sender
@@ -18,7 +25,10 @@ Tekan MENU`
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: gambar() }, 
-           hydratedFooterText: `Runtime: ${uptime}`,
+           hydratedFooterText: `Runtime: ${uptime}
+Waktu: ${time}
+${date}
+`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',
