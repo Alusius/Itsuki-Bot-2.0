@@ -17,14 +17,16 @@ let handler = async (m, {conn}) => {
 let anu = `${ucapan()}
 Halo👋
 Ada Yang Bisa Saya Bantu?
-Tekan MENU`
+Tekan MENU
+
+Runtime: ${uptime}`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: gambar() }, 
-           hydratedFooterText: `Runtime: ${uptime}\n${date}`,
+           hydratedFooterText: `${date}`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',
