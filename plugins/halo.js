@@ -26,8 +26,9 @@ Tekan MENU`
            locationMessage: { 
            jpegThumbnail: gambar() }, 
            hydratedFooterText: `Runtime: ${uptime}
-Waktu: ${time}
+
 ${date}
+${time}
 `,
            hydratedButtons: [{
              urlButton: {
