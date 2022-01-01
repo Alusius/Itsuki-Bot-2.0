@@ -4,7 +4,6 @@ let fs = require('fs')
 let handler = async (m, {conn}) => {
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
-    const time = moment.tz('Asia/Jakarta').format('HH:mm')
     let d = new Date
     let date = d.toLocaleDateString('id', {
         day: 'numeric',
@@ -25,11 +24,7 @@ Tekan MENU`
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: gambar() }, 
-           hydratedFooterText: `Runtime: ${uptime}
-
-${date}
-${time}
-`,
+           hydratedFooterText: `Runtime: ${uptime}\n${date}`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',
