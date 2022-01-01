@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
   if (json.status) m.reply(json.result)
   else throw 'Link Invalid!\nPeriksa url anda'
 }
-handler.help = ['shorturl'].map(v => v + ' <teks>')
+handler.help = ['shorturl'].map(v => v + ' <url>')
 handler.tags = ['shortlink']
 handler.command = /^shorturl$/i
 
