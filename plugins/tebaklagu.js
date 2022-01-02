@@ -1,39 +1,38 @@
 let fetch = require('node-fetch')
 
 let timeout = 120000
-let poin = 500
+let poin = 1000
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebaklagu = conn.tebaklagu ? conn.tebaklagu : {}
     let id = m.chat
-    if (id in conn.tebaklagu) return conn.reply(m.chat, 'Belum dijawab!', conn.tebaklagu[id][0])
-    /**
-     * silahkan tambahkan sendiri playlistnya
-     * ['id', 'id', 'dan seterusnya']
-     */
-    let playlist = ['3AaKHE9ZMMEdyRadsg8rcy']
-    let res = await fetch(API('amel', '/tebaklagu', { id: conn.pickRandom(playlist) }, 'apikey'))
-    if (!res.ok) throw res.status
-    let json = await res.json()
-    if (!json.status) throw json
+    if (id in conn.tebaklagu) {
+        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebaklagu[id][0])
+        throw false
+    }
+    // ubah isi 'id' kalo mau ganti playlist spotifynya
+    let res = await fetch(global.API('xteam', '/game/tebaklagu/', { id: '3AaKHE9ZMMEdyRadsg8rcy' }, 'APIKEY'))
+    if (res.status !== 200) throw await res.text()
+    let result = await res.json()
+    let json = result.result
+    // if (!json.status) throw json
     let caption = `
-Balas audionya kamu mau jawab
+TEBAK JUDUL LAGU
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik *${usedPrefix}cek* untuk bantuan
-Bonus: ${poin} XP`.trim()
+Bonus: ${poin} XP
+*Balas pesan ini untuk menjawab!*`.trim()
     conn.tebaklagu[id] = [
-        await conn.sendBut(m.chat, caption, wm, 'Bantuan', `.cek`, m),
+        await conn.sendBut(m.chat, caption, wm, 'Bantuan', '.cek', m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebaklagu[id]) conn.sendBut(m.chat, `Waktu habis!\nJawabannya adalah *${json.judul}*`, wm, 'Tebak Lagu', `.tebaklagu`, conn.tebaklagu[id][0])
+            if (conn.tebaklagu[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.judul}*`, conn.tebaklagu[id][0])
             delete conn.tebaklagu[id]
         }, timeout)
     ]
-    await conn.sendFile(m.chat, json.preview, 'eror.mp3', '', m, 1, { mimetype: 'audio/mp4' })
+    await conn.sendFile(m.chat, json.preview, 'coba-lagi.mp3', '', m)
 }
 handler.help = ['tebaklagu']
 handler.tags = ['game']
 handler.command = /^tebaklagu$/i
-
-handler.game = true
-
+handler.limit = true
 module.exports = handler
