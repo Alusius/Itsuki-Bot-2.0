@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let json = data[Math.floor(Math.random() * data.length)]
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}tekb untuk bantuan
+Ketik ${usedPrefix}tekab untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakkabupaten[id] = [
