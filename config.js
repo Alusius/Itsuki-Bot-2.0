@@ -4,7 +4,6 @@ global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   amel: 'https://melcanz.com',
-  amell: 'https://melcanz.net',
     bx: 'https://bx-hunter.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto-chan.herokuapp.com',
@@ -26,8 +25,6 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://melcanz.com': 'beli bang',
-  'https://melcanz.net': 'trial',
   'https://melcanz.com': 'trial',
   'https://api.xteam.xyz': '9287183216dd1eb3',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
@@ -50,6 +47,8 @@ global.instagram = 'https://instagram.com/elyas_tzy'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23101820&text='
 global.wait = '_*tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
+global.benar = '✅'
+global.salah = '❌'
 
 global.multiplier = 69 // The higher, The harder levelup
 
