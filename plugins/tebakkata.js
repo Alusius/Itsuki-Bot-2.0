@@ -1,30 +1,26 @@
 let fetch = require('node-fetch')
-
 let timeout = 120000
 let poin = 500
+
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakkata = conn.tebakkata ? conn.tebakkata : {}
     let id = m.chat
-    if (id in conn.tebakkata) {
-        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebakkata[id][0])
-        throw false
-    }
-    let res = await fetch(global.API('xteam', '/game/tebakkata', {}, 'APIKEY'))
-    if (res.status !== 200) throw await res.text()
+    if (id in conn.tebakkata) return conn.reply(m.chat, 'Belum dijawab!', conn.tebakkata[id][0])
+    let res = await fetch(API('amel', '/tebakkata', {}, 'apikey'))
+    if (!res.ok) throw eror
     let json = await res.json()
     if (!json.status) throw json
     let caption = `
-${json.result.soal}
+${json.soal}
 
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}teka untuk bantuan
-Bonus: ${poin} XP
 `.trim()
     conn.tebakkata[id] = [
-        await conn.reply(m.chat, caption, m),
+        await conn.sendBut(m.chat, caption, wm, 'Bantuan', '.teka', m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakkata[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.result.jawaban}*`, conn.tebakkata[id][0])
+            if (conn.tebakkata[id]) conn.sendBut(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, 'Tebak Kata', '.tebakkata', conn.tebakkata[id][0])
             delete conn.tebakkata[id]
         }, timeout)
     ]
@@ -32,5 +28,7 @@ Bonus: ${poin} XP
 handler.help = ['tebakkata']
 handler.tags = ['game']
 handler.command = /^tebakkata/i
+
+handler.game = true
 
 module.exports = handler
