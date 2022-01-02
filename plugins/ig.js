@@ -10,14 +10,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let json = JSON.parse(igdl)
     await m.reply(global.wait)
     for (let { downloadUrl, type } of json) {
-      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '© stikerin', m)
+      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '*nih*', m)
     }
   })
 }
 handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(ig|instagram)$/i
-
-handler.limit = 1
 
 module.exports = handler
