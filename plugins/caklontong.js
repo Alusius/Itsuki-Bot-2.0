@@ -20,7 +20,7 @@ Ketik ${usedPrefix}calo untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.caklontong[id] = [
-        await conn.sendBut(m.chat, caption, author, 'Bantuan', '.calo', m),
+        await conn.sendBut(m.chat, caption, wm, 'Bantuan', '.calo', m),
         json, poin,
         setTimeout(async () => {
             if (conn.caklontong[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*\n${json.deskripsi}`, author, 'Cak Lontong', '.caklontong', conn.caklontong[id][0])
