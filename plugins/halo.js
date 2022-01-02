@@ -1,3 +1,4 @@
+
 let moment = require('moment-timezone')
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
 let fs = require('fs')
@@ -17,7 +18,7 @@ let handler = async (m, {conn}) => {
 let anu = `${ucapan()}
 Halo👋
 Ada Yang Bisa Saya Bantu?
-Tekan MENU
+Tekan *MENU*
 
 Runtime: ${uptime}`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
