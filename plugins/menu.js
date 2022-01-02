@@ -40,10 +40,9 @@ const defaultMenu = {
 │ ✾ Role: %role
 ╰❑
 ╭─❑ 「 INFORMASI 」 ❑──
-│ mohon maaf untuk fitur game
-│ belum bisa di gunakan.
-│ maklumin owner yang maunya
-│ irit.
+│ fitur game sudah
+│ bisa di gunakan.
+│ bantu follow ig gw banh
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
