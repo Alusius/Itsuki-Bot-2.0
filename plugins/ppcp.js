@@ -1,16 +1,14 @@
-let fetch = require("node-fetch")
-
-let handler = async (m, { conn }) => {
-  let res = await fetch(global.API('LeysCoder', '/api/ppcouple', {}, 'apikey'))
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-  if (!json.status) throw json
-  let x = json.result.female
-  await conn.sendFile(m.chat, json.result.male, '', 'cowo', m)
-  await conn.sendButtonImg(m.chat, x, 'cewe', wm, 'next', '.ppcp', m)
+let fetch = require('node-fetch')
+let handler = async (m, { text }) => {
+  let url = await fetch('https://erdwpe-api.herokuapp.com/randomimg/ppcouple')
+  let barbar = await url.json()
+await conn.sendFile(m.chat, barbar.male, '', 'cowo', m)
+await conn.sendButtonImg(m.chat, barbar.female,'cewe', wm,'NEXT','.ppcp', m)
 }
-handler.help = ['ppcouple', 'ppcp']
-handler.tags = ['internet']
-handler.command = /^(pp(cp|couple))$/i
+handler.help = ['ppcp', 'ppcouple']
+handler.tags = ['fun']
+handler.command = /^(ppcp|ppcouple)$/i
+handler.private = false
+handler.limit = false
 
 module.exports = handler
