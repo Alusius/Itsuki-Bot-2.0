@@ -3,33 +3,31 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
-  'main': 'MENU UTAMA',
-  'game': 'MENU GAME',
-  'rpg': 'MENU RPG',
-  'xp': 'MENU EXP',
-  'group': 'MENU GROUP',
-  'owner': 'MENU OWNER',
-  'fun': 'MENU FUN',
-  'sticker': 'MENU CONVERT',
-  'maker': 'MENU MAKER',
-  'editor': 'MENU EDITOR',
-  'github': 'MENU GITHUB',
-  'quotes' : 'MENU QUOTES',
-  'internet': 'INTERNET',
-  'kerang': 'MENU KERANG',
-  'anime': 'MENU ANIME',
-  'tools': 'MENU TOOLS',
-  'advanced': 'ADVANCED',
-  'islam' : 'MENU ISLAMI',
-  'info': 'MENU INFO',
+  'main': '*MENU UTAMA*',
+  'advanced': '*ADVANCED*',
+  'absen': '*MENU ABSEN*',
+  'anime': '*MENU ANIME*',
+  'sticker': '*MENU CONVERT*',
+  'downloader': '*MENU DOWNLOADER*'
+  'xp': '*MENU EXP*',
+  'fun': '*MENU FUN*',
+  'game': '*MENU GAME*',
+  'github': '*MENU GITHUB*',
+  'group': '*MENU GROUP*',
+  'host': '*HOST*',
+  'image': '*MENU IMAGE*'
+  'info': '*MENU INFO*',
+  'internet': '*INTERNET*',
+  'islam' : '*MENU ISLAMI*',
+  'kerang': '*MENU KERANG*',
+  'maker': '*MENU MAKER*',
+  'owner': '*MENU OWNER*',
+  'quotes' : '*MENU QUOTES*',
+  'rpg': '*MENU RPG*',
+  'tools': '*MENU TOOLS*',
 }
 const defaultMenu = {
   before: `
-╭────ꕥ %me ꕥ────
-│✾ Version: %version
-│✾ Library: Baileys-MD
-│✾ Runtime: %uptime
-╰❑
 ╭─❑ 「 INFO USER 」 ❑──
 │ ✾ Name: %name
 │ ✾ Status: Free User
@@ -40,9 +38,7 @@ const defaultMenu = {
 │ ✾ Role: %role
 ╰❑
 ╭─❑ 「 INFORMASI 」 ❑──
-│ fitur game sudah
-│ bisa di gunakan.
-│ bantu follow ig gw banh
+│ 
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
