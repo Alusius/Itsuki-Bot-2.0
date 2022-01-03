@@ -1,6 +1,8 @@
 let fetch = require("node-fetch")
 
 let handler = async (m, { conn, text }) => {
+  let more = String.fromCharCode(8206)
+  let readMore = more.repeat(4001)
   let res = await fetch(global.API('zeks', '/api/resep-masak', { q : text }, 'apikey'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
@@ -10,7 +12,8 @@ ${json.title}
 ${json.url}\n
 *Tingkat:* ${json.tingkat}
 *Durasi:* ${json.duration}
-*Porsi:* ${json.banyak}\n\n
+*Porsi:* ${json.banyak}
+${readMore}\n\n
 *Bahan:* ${json.bahan}
 *Cara:* ${json.cara}
 `.trim(), m)
