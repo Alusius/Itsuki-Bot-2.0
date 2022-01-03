@@ -28,14 +28,12 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─❑ 「 INFO USER 」 ❑──
-│ ✾ Name: %name
-│ ✾ Status: Free User
-│ ✾ Limit: %limit
-│ ✾ Money: %money
-│ ✾ Exp: %totalexp
-│ ✾ Level: %level
-│ ✾ Role: %role
+╭────❑ *MENU* ❑────
+❑────❑ %me
+│✾ Version: %version
+│✾ Library: Baileys-MD
+│✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
+│✾ Runtime: %uptime
 ╰❑
 ╭─❑ 「 INFORMASI 」 ❑──
 │ 
