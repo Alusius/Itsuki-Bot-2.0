@@ -8,7 +8,7 @@ handler.before = async function (m) {
     if (!(id in this.caklontong)) return m.reply('Soal itu telah berakhir')
     if (m.quoted.id == this.caklontong[id][0].id) {
         let json = JSON.parse(JSON.stringify(this.caklontong[id][1]))
-        if (['.ao', 'Bantuan', ''].includes(m.text)) return !0
+        if (['.calo', 'Bantuan', ''].includes(m.text)) return !0
         if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.caklontong[id][2]
             await this.sendBut(m.chat, `*Benar!* +${this.caklontong[id][2]} XP\n${json.deskripsi}`, wm, 'Cak Lontong', '.caklontong', m)
