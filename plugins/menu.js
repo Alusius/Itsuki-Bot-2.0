@@ -8,7 +8,7 @@ let tags = {
   'absen': '*MENU ABSEN*',
   'anime': '*MENU ANIME*',
   'sticker': '*MENU CONVERT*',
-  'downloader': '*MENU DOWNLOADER*'
+  'downloader': '*MENU DOWNLOADER*',
   'xp': '*MENU EXP*',
   'fun': '*MENU FUN*',
   'game': '*MENU GAME*',
@@ -164,30 +164,16 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
            },
              {
-             callButton: {
-               displayText: 'Nomor Owner',
-               PhoneNumber: '+62 856-4335-4073'
-             }
-
-           },
-               {
-             quickReplyButton: {
-               displayText: 'Profile',
-               id: '.profile',
-             }
-
-           },
-               {
-             quickReplyButton: {
-               displayText: 'Donasi',
-               id: '.donasi',
+             urlButton: {
+               displayText: 'Owner',
+               PhoneNumber: 'http://wa.me/6285643354073?&text=Assalamualaikum'
              }
 
            },
            {
              quickReplyButton: {
-               displayText: '👤 Owner',
-               id: '.owner',
+               displayText: 'Profile',
+               id: '.profile',
              }
            }]
          }
