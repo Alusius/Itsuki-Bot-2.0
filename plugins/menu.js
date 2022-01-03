@@ -15,7 +15,7 @@ let tags = {
   'github': '*MENU GITHUB*',
   'group': '*MENU GROUP*',
   'host': '*HOST*',
-  'image': '*MENU IMAGE*'
+  'image': '*MENU IMAGE*',
   'info': '*MENU INFO*',
   'internet': '*INTERNET*',
   'islam' : '*MENU ISLAMI*',
