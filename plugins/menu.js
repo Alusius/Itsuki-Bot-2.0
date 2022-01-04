@@ -35,11 +35,10 @@ const defaultMenu = {
 │✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
 │✾ Runtime: %uptime
 ╰❑
-   *「 INFO 」*
-
+╭────❑「 INFO 」❑────
 ${informasibot}
+╰────
 
-────────────────
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '│ • %cmd %islimit %isPremium',
