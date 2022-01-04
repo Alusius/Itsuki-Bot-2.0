@@ -35,10 +35,8 @@ const defaultMenu = {
 │✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
 │✾ Runtime: %uptime
 ╰❑
-╭─❑ 「 INFORMASI 」 ❑──
-│ Tebakkabupaten= Hapus
-│ ALASAN = terlalu ez
-╰❑
+*「 INFO 」*
+${informasibot}
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '│ • %cmd %islimit %isPremium',
