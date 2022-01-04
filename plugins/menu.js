@@ -165,7 +165,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
              {
              urlButton: {
                displayText: 'Owner',
-               PhoneNumber: 'https://wa.me/6285643354073?&text=Assalamualaikum'
+               PhoneNumber: linkhubungi
              }
 
            },
