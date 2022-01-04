@@ -1,1 +1,0 @@
-global.informasibot = ['Elyas Ganteng']
