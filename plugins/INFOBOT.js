@@ -1,1 +1,1 @@
-global.informasibot = ['Elyas Ganteng']
+global.informasibot = ['│Elyas Ganteng']
