@@ -36,7 +36,8 @@ const defaultMenu = {
 │✾ Runtime: %uptime
 ╰❑
 ╭─❑ 「 INFORMASI 」 ❑──
-│ 
+│ Tebakkabupaten= Hapus
+│ ALASAN = terlalu ez
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
