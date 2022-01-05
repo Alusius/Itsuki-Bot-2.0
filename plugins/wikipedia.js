@@ -1,14 +1,15 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
-  let res = await fetch(global.API('zeks', '/api/wiki', { q: text }, 'apikey'))
-  if (!res.ok) throw await res.text()
+  if (!text) throw 'cari apa?'
+  let res = await fetch(`https://hadi-api.herokuapp.com/api/wiki?query=${text}`)
   let json = await res.json()
-  if (!json.result.result) throw 'Tidak ditemukan'
-  if (json.result.status) m.reply(`${json.result.result}`)
-  else throw json
+  if (json.status) m.reply(`*WIKIPEDIA*
+
+${json.result}`)
+  else throw 'not found'
 }
-handler.help = ['wikipedia','wiki'].map(v => v + ' <apa>')
-handler.tags = ['internet']
-handler.command = /^(wiki|wikipedia)$/i
-//belajar ngocok
+handler.help = ['wiki <pencarian>', 'wikipedia <pencarian']
+handler.tags = ['shortlink']
+handler.command = /^wiki|wikipedia$/i
+
 module.exports = handler
