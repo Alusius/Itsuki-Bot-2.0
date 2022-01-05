@@ -10,7 +10,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     await conn.sendFile(m.chat, json.result.data[0].url, json.result.data[0].url + json.result.data[0].type, wm, m)
 }
 handler.help = ['facebook'].map(v => v + ' <url>')
-handler.tags = ['download']
+handler.tags = ['downloader']
 handler.command = /^(facebook|fb)$/i
 
 handler.limit = 1
