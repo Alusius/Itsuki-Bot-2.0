@@ -7,12 +7,12 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     let json = await res.json()
     if (!json.status) throw json
     await m.reply(wait)
-    await conn.sendFile(m.chat, json.result.data[0].url, json.result.data[0].url + json.result.data[0].type, wm, m)
+    await conn.sendFile(m.chat, json.data[0].url, json.data[0].url + json.data[0].type, wm, m)
 }
-handler.help = ['facebook'].map(v => v + ' <url>')
+handler.help = ['facebook', 'fb'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(facebook|fb)$/i
 
-handler.limit = 1
+handler.limit = true
 
 module.exports = handler
