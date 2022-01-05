@@ -26,8 +26,8 @@ let handler = async(m, { conn, text }) => {
 
     conn.sendFile(m.chat, thumb, 'githubstalk.jpg', hasil, m)
 }
-handler.help = ['playstore'].map(v => v + ' <query>')
-handler.tags = ['search']
+handler.help = ['githubstalk'].map(v => v + ' <query>')
+handler.tags = ['github']
 handler.command = /^(githubstalk)$/i
 
 module.exports = handler
