@@ -14,7 +14,6 @@ let tags = {
   'game': '*MENU GAME*',
   'github': '*MENU GITHUB*',
   'group': '*MENU GROUP*',
-  'host': '*HOST*',
   'image': '*MENU IMAGE*',
   'info': '*MENU INFO*',
   'internet': '*INTERNET*',
@@ -24,6 +23,7 @@ let tags = {
   'owner': '*MENU OWNER*',
   'quotes' : '*MENU QUOTES*',
   'rpg': '*MENU RPG*',
+  'stalk': '*HOST*',
   'tools': '*MENU TOOLS*',
 }
 const defaultMenu = {
