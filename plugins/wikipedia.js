@@ -9,7 +9,7 @@ ${json.result}`)
   else throw 'not found'
 }
 handler.help = ['wiki <pencarian>', 'wikipedia <pencarian']
-handler.tags = ['shortlink']
+handler.tags = ['internet']
 handler.command = /^wiki|wikipedia$/i
 
 module.exports = handler
