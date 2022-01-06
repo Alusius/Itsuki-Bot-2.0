@@ -4,7 +4,7 @@ global.informasibot = [`│Update fitur new
 │githubstalk
 │tiktokstalk
 │jadwalbola
-│tts
+│tts (text jadi suara)
 │playstore
 │kisahnabi
 │ceritahorror
