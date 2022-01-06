@@ -19,8 +19,8 @@ ${json.result.kisah}
 
     conn.sendFile(m.chat, thumb, 'kisahnabi.jpg', hasil, m)
 }
-handler.help = ['heroml'].map(v => v + ' <nama hero>')
-handler.tags = ['internet']
+handler.help = ['kisahnabi'].map(v => v + ' <nama nabi>')
+handler.tags = ['islam']
 handler.command = /^(kisahnabi)$/i
 
 module.exports = handler
