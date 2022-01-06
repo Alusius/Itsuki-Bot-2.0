@@ -1,13 +1,17 @@
-let axios = require('axios')
-
-let handler = async (m, { conn, usedPrefix, command }) => {
-    let res = await axios.get(API('amel', '/ceritahantu', {}, 'apikey'))
-
-    let json = res.data
-    conn.sendBut(m.chat, json.data.judul, json.data.cerita, 'lagi', `${usedPrefix + command}`, m)
+let fetch = require('node-fetch')
+let handler = async (m, { conn, command }) => {
+  let res = await fetch('https://x-restapi.herokuapp.com/api/random-cehor?apikey=BETA')
+  if (res.status != 200) throw await res.text()
+  let json = await res.json()
+  if (!json.status) throw json
+conn.sendFile(m.chat, json.thumb, 'news.jpeg', `
+_*${json.judul}*_
+_${json.desc}_
+`.trim(),m)
 }
-handler.help = ['ceritahantu']
+handler.help = ['ceritahorror', 'ceritahantu']
 handler.tags = ['fun']
-handler.command = /^(ceritahantu)$/i
+handler.command = /^ceritahoror|ceritahorror|ceritahantu$/i
+
 
 module.exports = handler
