@@ -23,7 +23,7 @@ let tags = {
   'owner': '*MENU OWNER*',
   'quotes' : '*MENU QUOTES*',
   'rpg': '*MENU RPG*',
-  'stalk': '*HOST*',
+  'stalk': '*MENU STALK*',
   'tools': '*MENU TOOLS*',
 }
 const defaultMenu = {
