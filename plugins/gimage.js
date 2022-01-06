@@ -13,7 +13,7 @@ let handler  = async (m, { conn, args, text }) => {
 ${text}
 ➸ *width*: ${width}
 ➸ *height*: ${height}
-`.trim(), wm, NEXT, `.gimage ${text}, m)
+`.trim(), wm, 'NEXT', `.gimage ${text}`, m)
 }
 handler.help = ['image <query>', 'gimage <query>', 'googleimage <query>']
 handler.tags = ['internet']
