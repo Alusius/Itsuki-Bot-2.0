@@ -22,7 +22,7 @@ ${json.result}`
          hydratedTemplate: {
            hydratedContentText: anu,
            locationMessage: { 
-           jpegThumbnail: await(await fetch(`https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23101820&text=${text}`)).buffer() }, 
+           jpegThumbnail: await(await fetch(fla+'Lyrics')).buffer() }, 
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
