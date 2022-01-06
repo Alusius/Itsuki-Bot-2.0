@@ -22,7 +22,7 @@ let handler = async(m, { conn, text }) => {
     conn.sendFile(m.chat, thumb, 'ytstalk.jpg', hasil, m)
 }
 handler.help = ['ytstalk','youtubestalk'].map(v => v + ' <channel>')
-handler.tags = ['internet']
+handler.tags = ['stalk']
 handler.command = /^(ytstalk|youtubestalk)$/i
 
 module.exports = handler
