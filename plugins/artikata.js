@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
     let json = await res.json()
     if (!json.status) throw json
     m.reply(`
-Pencarian: ${text}
+*Pencarian: ${text}*
 ${json.artikata}
 
 `.trim())
