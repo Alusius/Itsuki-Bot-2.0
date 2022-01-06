@@ -24,9 +24,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				})
 				
 }
-handler.help = ['whatmusic']
+handler.help = ['whatmusic', 'judullagu']
 handler.tags = ['tools']
 
-handler.command = /^(whatmusic)$/i
+handler.command = /^(whatmusic|judullagu)$/i
 
 module.exports = handler
