@@ -17,7 +17,6 @@ if (!text) return conn.reply(m.chat, 'Harap Masukan nama nabi\n\nContoh: .kisahn
 let anu = `*── 「 KISAH NABI 」 ──*
 ▢ *Nabi*: ${json.result.nabi}
 ${readMore}
-▢ *Kisah*:  
 ${json.result.kisah}`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
