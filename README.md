@@ -153,5 +153,5 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
 # Thanks to
  [![Nurutomo](https://github.com/Nurutomo.png?size=150)](https://github.com/Nurutomo) | [![Ilman](https://github.com/ilmanhdyt.png?size=150)](https://github.com/ilmanhdyt) | [![Istikmal](https://github.com/Paquito1923.png?size=150)](https://github.com/Paquito1923)
 ----|----|----
-[Nurutomo](https://github.com/Nurutomo) | [Ilman](https://github.com/ilmanhdyt) | [Elyas](https://github.com/Paquito1923) | [Ariffb](https://github.com/ariffb25) | [f] (https://github.com/Alfarqun)
- Author | Recode | Recode | Mastah | Mastah
+[Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25) | [f] (https://github.com/Alfarqun)
+ Author | suhu | suhu
