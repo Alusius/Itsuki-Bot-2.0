@@ -151,7 +151,7 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
 ```
 
 # Thanks to
- [![Nurutomo](https://github.com/Nurutomo.png?size=150)](https://github.com/Nurutomo) | [![Ilman](https://github.com/ilmanhdyt.png?size=150)](https://github.com/ilmanhdyt) | [![Istikmal](https://github.com/Paquito1923.png?size=150)](https://github.com/Paquito1923)
+ [![Nurutomo](https://github.com/Nurutomo.png?size=150)](https://github.com/Nurutomo) | [![Ilman](https://github.com/ariffb25.png?size=150)](https://github.com/ariffb25) | [![Istikmal](https://github.com/Alfarqun.png?size=150)](https://github.com/Alfarqun)
 ----|----|----
 [Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25) | [f] (https://github.com/Alfarqun)
  Author | suhu | suhu
