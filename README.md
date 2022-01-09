@@ -22,6 +22,8 @@
 > EBOT whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
 >
+> • NOTE: INI SC GAK BISA BUAT SESSION DI TERMUX YA, JADI KALIAN CARI SESSION DULU PAKAI SC LAIN(sc SHIRAORIBOT-md bisa tuh)
+> 
 > • NOTE: Pastikan Jaringan kalian lancar dan device kalian bagus:v, 
 > 
 > • Kalo pake termux mungkin bakal lama respon nya, saya sarankan pake heroku
@@ -115,6 +117,8 @@ npm index
 
 ## UNTUK PENGGUNA TERMUX
 ```bash
+
+CARI SESSION DULU PAKAI SC BOT MD YANG LAIN🙏
 pkg update && pkg upgrade
 pkg install git
 pkg install nodejs
@@ -124,7 +128,8 @@ pkg install yarn
 git clone https://github.com/Paquito1923/elyasmd
 cd elyasmd
 yarn
-rm -rf session.data.json
+mc
+ganti session
 node .
 ```
 
