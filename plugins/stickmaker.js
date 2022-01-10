@@ -34,7 +34,7 @@ try {
 handler.help = ['stickmaker (caption|reply img)']
 handler.tags = ['sticker']
 handler.command = /^(stickmaker|smaker)$/i
-handler.limit = true
+handler.limit = false
 handler.group = false
 handler.register = false
 module.exports = handler
