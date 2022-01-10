@@ -41,4 +41,4 @@ function tts(text, lang = 'id') {
     } catch (e) { reject(e) }
   })
 }
-//fitur mengubah teks menjadi audio
+//fitur mengubah teks menjadi audio/ppt
