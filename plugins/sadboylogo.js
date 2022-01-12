@@ -3,7 +3,7 @@ let handler = async (m, { conn, args }) => {
    response = args.join(' ').split('|')
   if (!args[0]) throw 'Masukkan Parameter teks1\nContoh:.sadboylogo elyas|ganzz'
   if (!args[1]) throw 'Masukkan Parameter teks2\nContoh:.sadboylogo elyas|ganzz'
-  m.reply('*Wait Ngab*\nProses...')
+  if (!args[2]) await m.reply('*Wait Ngab*\nProses...')
   let res = `https://melcanz.com/sadboy?nama=${response[0]}&nama2=${response[1]}&apikey=dUtJxxvp`
   conn.sendFile(m.chat, res, 'sadboy.jpg', `Sudah Jadi`, m, false)
 }
