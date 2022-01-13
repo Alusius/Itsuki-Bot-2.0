@@ -1,14 +1,16 @@
 let fetch = require('node-fetch')
-let handler = async (m, { text }) => {
-  let url = await fetch('https://erdwpe-api.herokuapp.com/randomimg/ppcouple')
-  let barbar = await url.json()
-await conn.sendFile(m.chat, barbar.male, '', 'cowo', m)
-await conn.sendButtonImg(m.chat, barbar.female,'cewe', wm,'NEXT','.ppcp', m)
+let handler = async (m, { conn, command }) => {
+  let res = await fetch('https://caliphapi.com/api/ppcouple?apikey=ELYASXD')
+  if (res.status != 200) throw await res.text()
+  let json = await res.json()
+  if (!json.status) throw json
+conn.sendButtonImg(m.chat, json.result.female,  'Cewe', wm, 'Next', '.ppcp', m)
+conn.sendFile(m.chat, json.result.male,'pria.jpg',  'Cowo', m)
+
 }
-handler.help = ['ppcp', 'ppcouple']
-handler.tags = ['fun']
-handler.command = /^(ppcp|ppcouple)$/i
-handler.private = false
-handler.limit = false
+handler.help = ['ppcp']
+handler.tags = ['internet']
+handler.command = /^ppcp$/i
+
 
 module.exports = handler
