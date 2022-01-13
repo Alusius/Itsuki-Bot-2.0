@@ -4,9 +4,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { usedPrefix, command, conn:fur, args }) => {
 if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} spiderman`
 xfar.Film(args[0]).then(async data => {
-    let more = String.fromCharCode(8206)
-    let readMore = more.repeat(4001)
-let txt = `*--------「 FILM-SEARCH 」--------*\n\n${readMore}`
+let txt = `*--------「 FILM-SEARCH 」--------*\n\n`
 for (let i of data) {
 txt += `*📫 Judul :* ${i.judul}\n`
 txt += `*🎞️  Tipe  :* ${i.type}\n`
