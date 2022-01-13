@@ -1,6 +1,5 @@
 const simple = require('./lib/simple')
 const util = require('util')
-const fetch = require('node-fetch')
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(resolve, ms))
@@ -455,7 +454,7 @@ module.exports = {
             } finally {
               text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendButtonLoc(jid, await(await fetch((fla + action === 'add' ? 'Welcome' : 'Goodbye'))).buffer(), text, watermark + `${db.data.chats[jid].deletemedia ? `, delete after ${db.data.chats[jid].deletemediaTime / 1000} s` : ''}`, action === 'add' ? 'Welcome' : 'Goodbye', 'ig :elyas_tzy')
+              this.sendButtonLoc(jid, await(await fetch((fla + 'SELAMAT'))).buffer(), text, watermark + `${db.data.chats[jid].deletemedia ? `, delete after ${db.data.chats[jid].deletemediaTime / 1000} s` : ''}`, action === 'add' ? 'Welcome' : 'Goodbye', 'ig :elyas_tzy')
 
               setTimeout(() => {
 
