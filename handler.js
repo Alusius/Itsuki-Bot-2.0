@@ -440,29 +440,33 @@ module.exports = {
             if (opts['queque'] && m.text && quequeIndex !== -1) this.msgqueque.splice(quequeIndex, 1)
         }
     },
-    async participantsUpdate({ jid, participants, action }) {
-    let chat = global.db.data.chats[jid] || {}
-    let text = ''
-    switch (action) {
-      case 'add':
-      case 'remove':
-        if (chat.welcome) {
-          let groupMetadata = await this.groupMetadata(jid)
-          for (let user of participants) {
-            let pp = './media/sore.jpg'
-             catch (e) {
-            } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
-                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendButtonLoc(jid, await(await fetch((fla + 'SELAMAT'))).buffer(), text, watermark + `${db.data.chats[jid].deletemedia ? `, delete after ${db.data.chats[jid].deletemediaTime / 1000} s` : ''}`, action === 'add' ? 'Welcome' : 'Goodbye', 'ig :elyas_tzy')
-
-              setTimeout(() => {
-
-                if (chat.deletemedia) this.deleteMessage(jid, key)
-              }, chat.deletemediaTime)
-            }
-          }
-        }
+    async participantsUpdate({ id, participants, action }) {
+        if (opts['self']) return
+        // if (id in conn.chats) return // First login will spam
+        if (global.isInit) return
+        let chat = global.db.data.chats[id] || {}
+        let text = ''
+        switch (action) {
+            case 'add':
+            case 'remove':
+                if (chat.welcome) {
+                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                    for (let user of participants) {
+                        let pp = './src/avatar_contact.png'
+                        try {
+                            pp = await this.getProfilePicture(user)
+                        } catch (e) {
+                        } finally {
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                            this.sendFile(id, pp, 'pp.jpg', text, null, false, {
+                                contextInfo: {
+                                    mentionedJid: [user]
+                                }
+                            })
+                        }
+                    }
+                }
                 break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
