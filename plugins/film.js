@@ -13,7 +13,7 @@ txt += `*📮Upload :* ${i.upload}\n`
 txt += `*🔗 Url :* ${await shortlink(i.link)}\n-----------------------------------------------------\n`
 }
 
-conn.sendButtonLoc(m.chat, await (await fetch(data[0].thumb)).buffer(), txt, wm, 'pencet', '.sendal', m)
+conn.sendButtonLoc(m.chat, await (await fetch(data[0].thumb)).buffer(), txt, wm, 'pencet', 'huuu', m)
 })
 }
 handler.help = ['film <keyword>']
