@@ -23,7 +23,7 @@ let handler = async(m, { conn, text }) => {
 ${json.result[0].url}
 `
 
-    conn.sendButtonImg(m.chat, thumb, 'playstore.jpg', hasil, wm, 'Pencet', 'huuu', m)
+    conn.sendButtonImg(m.chat, thumb, hasil, wm, 'Pencet', 'huuu', m)
 }
 handler.help = ['playstore'].map(v => v + ' <nama apk>')
 handler.tags = ['internet']
