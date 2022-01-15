@@ -5,7 +5,7 @@ let handler = async(m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, 'Harap Masukan nama aplikasi', m)
 
   await m.reply('Searching...')
-    let res = await fetch(`https://caliphapi.com/api/playstore/search?apikey=wVLiUzSa&q=${text}`)
+    let res = await fetch(`https://caliphapi.com/api/playstore/search?apikey=ELYASXD&q=${text}`)
     let json = await res.json()
     if (res.status !== 200) throw await res.text()
     if (!json.status) throw json
