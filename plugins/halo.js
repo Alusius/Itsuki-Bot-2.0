@@ -41,6 +41,13 @@ Runtime: ${uptime}`
                id: '.menu',
              }
 
+           },
+               {
+             quickReplyButton: {
+               displayText: 'Jangan Di Pencet',
+               id: 'huuu',
+             }
+
            }]
          }
        }
