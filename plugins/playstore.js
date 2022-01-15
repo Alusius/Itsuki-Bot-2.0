@@ -9,7 +9,7 @@ let handler = async(m, { conn, text }) => {
     let json = await res.json()
     if (res.status !== 200) throw await res.text()
     if (!json.status) throw json
-    let thumb = await (await fetch(json.result[0].icon)).buffer()
+    let thumb = json.result[0].icon
     let hasil = `*── 「 PLAY STORE 」 ──*
 
 ▢ *NAMA*: ${json.result[0].title}
