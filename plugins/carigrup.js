@@ -1,9 +1,11 @@
+let fetch = require('node-fetch')
 let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} mabar`
     let res = await carigroup(text, 'name')
-    if (!res.length) throw 'Group tidak ditemukan ¯\_(ツ)_/¯'
-    let teks = res.map(res => res.subject + '\n' + res.link).join('\n\n')
-    m.reply(teks)
+    if (!res.length) throw 'Group tidak ditemukan!'
+    let teks = res.map(res => res.subject + '\n' + res.link).join('\n────────────\n')
+    let image = 'https://telegra.ph/file/f5ec51bac808f543ef1d7.png'
+    conn.sendButtonLoc(m.chat, await(await fetch(image)).buffer(),teks,wm,'Jangan Di Pencet', 'huuu', m)
 }
 handler.help = ['carigrup <pencarian>']
 handler.tags = ['tools']
