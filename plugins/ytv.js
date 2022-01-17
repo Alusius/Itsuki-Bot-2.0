@@ -1,3 +1,4 @@
+let axios = require('axios')
 let limit = 1024
 let fetch = require('node-fetch')
 const { servers, ytv } = require('../lib/y2mate')
@@ -10,10 +11,11 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+*${isLimit ? 'Pakai ': ''}Link:* 
+${await shortlink(dl_link)}
 
-Jika Video tidak dikirim Ataupun Error
-Kamu bisa mendownloadnya langsung lewat link di atas
+*JIKA VIDEO TIDAK DI KIRIM ATAUPUN ERROR*
+Kamu bisa mendownloadnya langsung lewat *LINK* di atas
 `.trim(), m)
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
@@ -44,3 +46,6 @@ handler.limit = true
 
 module.exports = handler
 
+async function shortlink(url){
+isurl = /https?:\/\//.test(url)
+return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''}
