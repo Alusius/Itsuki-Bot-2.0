@@ -10,7 +10,9 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${await shortlink(dl_link)}
+*${isLimit ? 'Pakai ': ''}Link:* 
+${await shortlink(dl_link)}
+
 *Jika Audio Tidak Di Kirim*
 Kamu bisa memdownloadnya langsung lewat *link di atas*`.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
