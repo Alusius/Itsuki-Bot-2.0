@@ -20,7 +20,7 @@ Kamu bisa mendownloadnya langsung lewat *LINK* di atas
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
   catch (e) { }
-  if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp4', `
+  conn.sendFile(m.chat, dl_link, title + '.mp4', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 `.trim(), m, false, {
