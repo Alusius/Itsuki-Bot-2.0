@@ -1,17 +1,12 @@
-let fetch = require('node-fetch')
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} logo`
-  let res = await fetch(global.API('zeks', '/api/pinimg', {
-    q: text
-  }, 'apikey'))
-  if (!res.ok) throw eror
-  let json = await res.json()
-  if (!json.status) throw json
-  let pint = json.data[Math.floor(Math.random() * json.data.length)];
-  conn.sendButtonImg(m.chat, pint, '*Pinterest*', wm, 'NEXT', `.pinterest ${text}`, m, 0, { thumbnail: await (await fetch(pint)).buffer() })
+let xfar = require('xfarr-api')
+let handler = async (m, { usedPrefix, command, conn, args }) => {
+	 	  if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} naruto`
+xfar.Pinterest(args[0]).then(async data => {
+let pincpt = `🔗Link media : ${data.url}`
+conn.sendFile(m.chat,data.url, 'pin.jpg', pincpt,m)})
 }
-handler.help = ['pinterest <pencarian>']
-handler.tags = ['downloader']
-handler.command = /^(pint(erest)?)$/i
+handler.help = ['pinterest <keyword>']
+handler.tags = ['internet']
+handler.command = /^(pinterest)$/i
 
 module.exports = handler
