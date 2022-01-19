@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     meme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : '')}/${encodeURIComponent(bawah ? bawah : '')}.png?background=${url}`
 try {
     let stiker = await sticker(null, meme, global.packname, global.author)
-    await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+    await conn.sendFile(m.chat, stiker, {
       quoted: m
     })
   } catch (e) {
