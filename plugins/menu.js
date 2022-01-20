@@ -121,8 +121,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '🇱' : '')
+                .replace(/%isPremium/g, menu.premium ? '🇵' : '')
                 .trim()
             }).join('\n')
           }),
