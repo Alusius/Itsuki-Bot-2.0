@@ -1,1 +1,1 @@
-global.informasibot = [`│`]
+global.informasibot = [`│inpone mazzeh?🤣`]
