@@ -99,8 +99,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
-        🇱: plugin.limit,
-        🇵: plugin.premium,
+        limit: plugin.🇱,
+        premium: plugin.🇵,
         enabled: !plugin.disabled,
       }
     })
