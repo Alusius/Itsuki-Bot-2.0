@@ -99,8 +99,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
-        limit: plugin.limit,
-        premium: plugin.premium,
+        🇱: plugin.limit,
+        🇵: plugin.premium,
         enabled: !plugin.disabled,
       }
     })
@@ -154,7 +154,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            hydratedContentText: text.trim(),
            locationMessage: { 
            jpegThumbnail: fs.readFileSync('./media/elyas.jpg') },
-           hydratedFooterText: wm,
+           hydratedFooterText: `wm\n🇱=limit\n🇵=premium`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍Instagram',
