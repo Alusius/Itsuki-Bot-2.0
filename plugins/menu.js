@@ -154,7 +154,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            hydratedContentText: text.trim(),
            locationMessage: { 
            jpegThumbnail: fs.readFileSync('./media/elyas.jpg') },
-           hydratedFooterText: `wm\n🅛=limit 🅟=premium`,
+           hydratedFooterText: `🅛=limit 🅟=premium`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍Instagram',
