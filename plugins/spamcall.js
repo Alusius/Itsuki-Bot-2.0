@@ -1,30 +1,15 @@
 let fetch = require('node-fetch')
-
-let handler = async(m, { conn, text }) => {
-
-  if (!text) return conn.reply(m.chat, `Harap Masukan nomor target tanpa awalan 0
-contoh: 
-
-.spamcall 087123456789
-Contoh SALAH❌!
-
-.spamcall 87123456789
-Contoh BENAR✅`, m)
-
-  await m.reply('Menghubungi...')
-    let res = await fetch(`https://caliphapi.com/api/spamcall?no=${text}&apikey=ELYASXD`)
-    let json = await res.json()
-    if (res.status !== 200) throw await res.text()
-    if (!json.status) throw json
-    let hasil = `${json.result}
-`
-
-    m.reply(hasil)
+let handler = async (m, { conn, text, usedPrefix }) => {
+  if (!text) throw `Contoh Penggunaan\n${usedPrefix}spamcall 628xxxxxxxx`
+  let nomor = text.replace(/[^0-9]/gi, '').slice(2)
+  if (!nomor.startsWith('8')) throw `Contoh Penggunaan\n${usedPrefix}spamcall 628xxxxxxxx`
+  m.reply('_*Tunggu permintaan anda sedang diproses.....*_')
+  let anu = await fetch(`https://id.jagreward.com/member/verify-mobile/${nomor}`).then(a => a.json())
+  let spcall = `*Nomor bot* : _${anu.phone_prefix}_\n\n_Bot berhasil menlpon anda!_`
+  conn.reply(m.chat, `${spcall}`.trim(), m)
 }
-handler.help = ['spamcall'].map(v => v + ' <no target>')
-handler.tags = ['premium']
+handler.help = ['spamcall <nomor>']
+handler.tags = ['tools']
 handler.command = /^(spamcall)$/i
 handler.limit = true
-handler.premium = true
-
 module.exports = handler
