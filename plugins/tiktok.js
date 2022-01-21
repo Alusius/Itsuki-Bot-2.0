@@ -29,7 +29,7 @@ handler.command = /^(tik(tok)?(dl)?)$/i
 
 module.exports = handler*/
 
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 let handler = async (m, { conn, args, command, usedPrefix }) => {
   if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} https://tiktokxxxx`
   let { video, description, music, author } = await tiktok(args[0])
@@ -76,4 +76,13 @@ async function tiktok(url) {
   } catch (e) {
     throw 'Mungkin video private?!'
   }
+}*/
+const hxz = require("hxz-api")
+let handler = async(m,{text, conn}) => {
+
+let p = await  hxz.ttdownloader(text)
+const { nowm, wm, audio } = p
+conn.sendFile(m.chat, nowm, null, nowm, m)
 }
+handler.command = ['ttdl']
+module.exports = handler
