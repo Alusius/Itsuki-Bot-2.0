@@ -73,32 +73,32 @@ module.exports = handler
 
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  if (time >= 4) {
+  if (time >= 5) {
     res = "Selamat pagi🌄"
   }
-  if (time > 8) {
+  if (time > 9) {
     res = "Selamat siang🏞️"
   }
-  if (time >= 14) {
+  if (time >= 15) {
     res = "Selamat sore🌇"
   }
-  if (time >= 18) {
+  if (time >= 19) {
     res = "Selamat malam🌃"
   }
   return res
 }
 function gambar() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  if (time >= 4) {
+  if (time >= 5) {
     res = fs.readFileSync('./media/pagi.jpg')
   }
   if (time > 9) {
     res = fs.readFileSync('./media/siang.jpg')
   }
-  if (time >= 14) {
+  if (time >= 15) {
     res = fs.readFileSync('./media/sore.jpg')
   }
-  if (time >= 18) {
+  if (time >= 19) {
     res = fs.readFileSync('./media/malam.jpg')
   }
   return res
