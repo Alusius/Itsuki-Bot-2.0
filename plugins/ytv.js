@@ -1,4 +1,5 @@
 let axios = require('axios')
+let xfar = require("xfarr-api")
 let limit = 1024
 let fetch = require('node-fetch')
 const { servers, ytv } = require('../lib/y2mate')
@@ -20,12 +21,10 @@ Kamu bisa mendownloadnya langsung lewat *LINK* di atas
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
   catch (e) { }
-  conn.sendFile(m.chat, dl_link, title + '.mp4', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-`.trim(), m, false, {
-  ..._thumb,
-  asDocument: chat.useDocument
+  let elys = await xfar.Youtube(text)
+let {title, url, thumbnail, duration, source, medias } = await F
+conn.sendFile(m.chat, medias[0].url, null, `durasi:${duration}
+judul:${title}`, m)
 })
 }
 handler.help = ['mp4','v',''].map(v => 'yt' + v + ` <url>`)
@@ -49,3 +48,6 @@ module.exports = handler
 async function shortlink(url){
 isurl = /https?:\/\//.test(url)
 return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''}
+
+
+
