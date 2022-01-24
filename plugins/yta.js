@@ -1,4 +1,3 @@
-let axios = require('axios')
 let limit = 1024
 const { servers, yta } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
@@ -10,11 +9,8 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* 
-${await shortlink(dl_link)}
-
-*JIKA AUDIO TIDAK DI KIRIM ATAUPUN ERROR*
-Kamu bisa memdownloadnya langsung lewat *LINK* di atas`.trim(), m)
+*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+`.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
@@ -39,7 +35,3 @@ handler.exp = 0
 handler.limit = true
 
 module.exports = handler
-
-async function shortlink(url){
-isurl = /https?:\/\//.test(url)
-return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''}
