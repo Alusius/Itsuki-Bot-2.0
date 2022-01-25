@@ -460,9 +460,9 @@ module.exports = {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
                             this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, wm, "ok", "huuu", null)
-                        }
+                        })
                     }
-                })
+                }
                 break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
