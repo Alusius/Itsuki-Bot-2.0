@@ -21,7 +21,7 @@ try {
     await conn.sendFile(m.chat, meme, 'image.png', 'Nih Banh', m)
   }
 }
-handler.help = ['smim <teks atas>|<teks bawah>']
+handler.help = ['smeme<teks atas>|<teks bawah>']
 handler.tags = ['sticker']
 handler.command = /^(smeme)$/i
 
