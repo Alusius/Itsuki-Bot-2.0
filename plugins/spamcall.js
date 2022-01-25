@@ -12,4 +12,5 @@ handler.help = ['spamcall <nomor>']
 handler.tags = ['tools']
 handler.command = /^(spamcall)$/i
 handler.limit = true
+handler.premium = true
 module.exports = handler
