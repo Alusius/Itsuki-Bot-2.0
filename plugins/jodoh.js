@@ -5,11 +5,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [nama1, nama2] = text.split(/[&|.]/i)
     if (!nama1 || !nama2) throw `contoh:\n${usedPrefix + command} elyas|dinda annisa`
 
-    let res = await fetch(global.API('zeks', '/api/primbonjodoh', { nama1, nama2 }, 'apikey'))
-    if (res.status != 200) throw await `${res.status} ${res.statusText}`
-    let json = await res.json()
-    if (json.status) {
-        let { nama1, nama2, thumb, positif, negatif } = json.result
         conn.sendbut(m.chat, `*MASIH KECIL GAUSAH JODOH JODOHAN*\n${read}\n\n\n*NTAR KALAU DITINGGALIN RASANYA SAKIT!*`.trim(),'', ':)', 'huuu')
     }
     else throw json
