@@ -445,6 +445,7 @@ module.exports = {
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
         let chat = global.db.data.chats[id] || {}
+        let fetch = require('node-fetch')
         let text = ''
         switch (action) {
             case 'add':
@@ -459,7 +460,7 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                                this.sendBut(id, text, wm, "ok", "huuu", null)
+                                this.sendButtonLoc(id, text, await(await fetch(pp)).buffer, wm, "ok", "huuu", null)
                                 }
                     }
                 }
