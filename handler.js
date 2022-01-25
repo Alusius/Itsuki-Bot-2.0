@@ -453,14 +453,14 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = './src/avatar_contact.png'
+                       let pp = './src/welcome.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, 'F', "ok", ".menu", null)
+                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, 'F', "ok", "huuu", null)
                                 }
                     }
                 }
