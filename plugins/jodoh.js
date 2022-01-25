@@ -10,14 +10,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let json = await res.json()
     if (json.status) {
         let { nama1, nama2, thumb, positif, negatif } = json.result
-        m.reply(`
-*Nama kamu:* ${nama1}
-*Nama doi:* ${nama2}
-*Positif:*
-${positif}
-*Negatif:*
-${negatif}
-`.trim())
+        conn.sendbut(m.chat, `*MASIH KECIL GAUSAH JODOH JODOHAN*\n${read}\n\n\n*NTAR KALAU DITINGGALIN RASANYA SAKIT!*`.trim(),'', ':)', 'huuu')
     }
     else throw json
 
@@ -29,3 +22,7 @@ handler.command = /^(jodoh)$/i
 handler.limit = true
 
 module.exports = handler
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
+let read = `${readMore}`
