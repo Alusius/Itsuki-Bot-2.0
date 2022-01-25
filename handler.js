@@ -463,7 +463,7 @@ module.exports = {
                             this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, wm, "ok", "huuu", null)
                         }
                     }
-                }
+                })
                 break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
