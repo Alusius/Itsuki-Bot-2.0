@@ -454,13 +454,13 @@ module.exports = {
                     for (let user of participants) {
                         let pp = './src/welcome.jpg'
                         try {
-                            pp = await this.profilePictureUrl(m.chat, 'image')
+                            pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
                             this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, wm, "ok", "huuu", null)
-                        })
+                        }
                     }
                 }
                 break
