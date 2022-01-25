@@ -454,7 +454,7 @@ module.exports = {
                     for (let user of participants) {
                         let pp = './src/welcome.jpg'
                         try {
-                            pp = this.profilePictureUrl(m.chat, 'image')
+                            pp = await this.profilePictureUrl(m.chat, 'image')
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
