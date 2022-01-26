@@ -50,8 +50,8 @@ SILAHKAN PILIH`
          { messageId: template.key.id }
      )
 }
-handler.help = ['kisahnabi'].map(v => v + ' <nama nabi>')
-handler.tags = ['islam']
+handler.help = ['tiktok'].map(v => v + ' <url>')
+handler.tags = ['downloader']
 handler.command = /^(tiktok)$/i
 
 module.exports = handler
