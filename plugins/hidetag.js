@@ -1,6 +1,5 @@
 let handler = async(m, { conn, text, participants }) => {
-let text = m.quoted ? m.quoted : m
-     conn.sendMessage(m.chat, { text: text, mentions: participants.map(a => a.id) }, )
+     conn.sendMessage(m.chat, { text: text, mentions: participants.map(a => a.id) }, {quoted:m})
 }
 handler.help = ['hidetag <pesan>']
 handler.tags = ['group']
