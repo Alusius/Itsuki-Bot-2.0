@@ -17,7 +17,7 @@ Ketik ${usedPrefix}tebu untuk bantuan
 Bonus: ${poin} XP
     `.trim()
   conn.tebakkabupaten[id] = [
-    await conn.sendButImg(m.chat, await (await fetch(json.url)).buffer(), caption, '', 'Bantuan', '.tebu', m)
+    await conn.sendButtonImg(m.chat, await (await fetch(json.url)).buffer(), caption, '', 'Bantuan', '.tebu', m)
     ,
     json, poin,
     setTimeout(async () => {
