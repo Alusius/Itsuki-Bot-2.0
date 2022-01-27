@@ -49,4 +49,5 @@ handler.tags = ['internet']
 handler.command = /^playstore$/i
 
 
-module.exports = handler/*
+module.exports = handlerhandler
+*/
