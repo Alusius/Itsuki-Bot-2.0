@@ -1,29 +1,24 @@
-const fetch = require('node-fetch')
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let xfar = require('xfarr-api')
+let fetch = require('node-fetch')
+let handler = async (m, { conn, command, text }) => {
+    if (!text) throw 'Masukkan nama daerah\n\nContoh: .jadwalsholat jakarta'
+  let res = await xfar.JadwalSholat(text)
+conn.sendBut(m.chat, ` *JADWAL SHOLAT*
+${text}
 
-    if (!text) return m.reply(`contoh:\n${usedPrefix + command} jakarta`)
-    let res = await fetch(global.API('zeks', '/api/jadwalsholat', { daerah: text }, 'apikey'))
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
-    let json = await res.json()
-    if (!json.status) {
-        if (json.message == 'use of apikey reached the limit') throw json
-        let hasil = json.listdaerah.map((v, i) => `│ ${i + 1}. ${v}`).join`\n`
-        m.reply(`
-*${json.message}*
-contoh:
-${usedPrefix + command} jakarta
-┌ *Daftar Daerah*
-│ 
-${hasil}
-│ 
-└────`.trim())
-        throw false
-    }
-    m.reply(`Jadwal Sholat ${text}\n\n${json.data.string}`.trim())
+_*${res.tanggal}*_
+Imsyak: ${res.imsyak}
+Subuh: _${res.subuh}_
+Dzuhur: _${res.dzuhur}_
+Ashar: ${res.ashar}
+Maghrib: ${res.maghrib}
+Isya: ${res.isya}
+`, wm, 'ok', 'huuu',m)
 
 }
-handler.help = ['salat <daerah>']
-handler.tags = ['islam']
-handler.command = /^(jadwal)?s(a|o|ha|ho)lat$/i
+handler.help = ['jadwalsholat <daerah>']
+handler.tags = ['internet']
+handler.command = /^jadwalsholat$/i
+
 
 module.exports = handler
