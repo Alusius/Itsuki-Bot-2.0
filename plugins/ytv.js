@@ -11,9 +11,6 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
-
-Jika Video tidak dikirim Ataupun Error
-Kamu bisa mendownloadnya langsung lewat link di atas
 `.trim(), m)
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
@@ -26,7 +23,7 @@ Kamu bisa mendownloadnya langsung lewat link di atas
   asDocument: chat.useDocument
 })
 }
-handler.help = ['mp4','v',''].map(v => 'yt' + v + ` <url>`)
+handler.help = ['mp4','v',''].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
 handler.tags = ['downloader']
 handler.command = /^yt(v|mp4)?$/i
 handler.owner = false
