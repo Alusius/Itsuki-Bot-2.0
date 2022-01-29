@@ -1,4 +1,5 @@
 let axios = require('axios')
+let fetch = require('node-fetch')
 let limit = 1024
 const { servers, yta } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
@@ -7,7 +8,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   let server = (args[1] || servers[0]).toLowerCase()
   let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
+  conn.sendButtonLoc(m.chat, await(await fetch(thumb).buffer()), 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *${isLimit ? 'Pakai ': ''}Link:* 
