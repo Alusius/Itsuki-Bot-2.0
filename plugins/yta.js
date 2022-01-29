@@ -9,15 +9,14 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
   let tumbnel = await await (await fetch(thumb)).buffer()
-  conn.sendButtonLoc(m.chat, tumbnel, 'thumbnail.jpg', `
+  conn.sendButtonLoc(m.chat, tumbnel, `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *${isLimit ? 'Pakai ': ''}Link:* 
 ${await shortlink(dl_link)}
-
-Jika Audio tidak di kirim
+`, `Jika Audio tidak di kirim
 silahkan klik link di atas untuk mendownloadnya
-`.trim(), wm, 'ok', '', m)
+`.trim(), 'ok', '', m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
