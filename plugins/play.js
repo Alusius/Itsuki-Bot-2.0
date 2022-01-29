@@ -52,8 +52,15 @@ ${vid.url}
            },
                {
              quickReplyButton: {
-               displayText: 'video',
+               displayText: 'video 360p',
                id: `.ytmp4 ${vid.url}`,
+             }
+
+            },
+               {
+             quickReplyButton: {
+               displayText: 'video 720p',
+               id: `.ytv720 ${vid.url}`,
              }
 
             },
