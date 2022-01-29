@@ -3,7 +3,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text }) => {
     if (!text) throw 'Masukkan Link\n\nContoh: .ytv720 https://youtube.com/xxxxxx'
   let res = await xfar.Youtube(text)
-m.reply(m.chat, '*Tunggu Sebentar...*', m)
+m.reply('*Tunggu Sebentar...*')
 conn.sendFile(m.chat,res.medias[2].url, '', `Youtube Downloader
 720p`, m)
 
