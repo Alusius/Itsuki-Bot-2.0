@@ -47,7 +47,7 @@ global.author = `elyas(bot)
 
 
 
-ig: ${instagram}`
+ig: elyas_tzy`
 
 global.wm = 'by elyas'
 global.media = 'https://telegra.ph/file/ccb2359d3925fd7af58cd.jpg'
