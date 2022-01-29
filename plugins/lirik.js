@@ -1,48 +1,34 @@
-let moment = require('moment-timezone')
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
-let fs = require('fs')
+let { MessageType } = require('@adiwajshing/baileys-md')
 let fetch = require('node-fetch')
-let handler = async (m, {text}) => {
-if (!text) return conn.reply(m.chat, 'Harap Masukan judul lagu \n\n*Contoh:* .lirik tinggal kenangan', m)
-  let res = await fetch(`https://leyscoders-api.herokuapp.com/api/lirik?q=${text}&apikey=MIMINGANZ`)
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-if (!fla) throw json
-    let who
-    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-    else who = m.sender
-    let user = global.db.data.users[who]
-    let more = String.fromCharCode(8206)
-    let readMore = more.repeat(4001)
-let anu = `*Judul:${text}*
-${readMore}
-${json.result}`
-     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-     templateMessage: {
-         hydratedTemplate: {
-           hydratedContentText: anu,
-           locationMessage: { 
-           jpegThumbnail: await(await fetch(fla+'Lyrics')).buffer() }, 
-           hydratedFooterText: wm,
-           hydratedButtons: [{
-             urlButton: {
-               displayText: '📍instagram',
-               url: instagram
-               }
-               
-             }]
-         }
-       }
-     }), { userJid: m.sender, quoted: m });
-    //conn.reply(m.chat, text.trim(), m)
-    return await conn.relayMessage(
-         m.chat,
-         template.message,
-         { messageId: template.key.id }
-     )
+let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
+    try {
+        if (!args || !args[0] || args.length < 1) return m.reply(`[❗] Format salah\nContoh : ${usedPrefix}lirik sad!`)
+        let res = await fetch(global.API('bg', '/lirik', { 
+            title: args[0],
+            artist: args[1] || '' 
+        }))
+        let json = await res.json()
+        if (json.status !== true) throw json
+        m.reply(`
+〘 *Lirik/Lyrics* 〙
+_Song Name_ : *${args[0]}*
+Requested by : *${conn.getName(m.sender)}*
+\`\`\`${json.result}\`\`\`
+`.trim())
+    } catch (e) {
+        m.reply('Error!')
+        console.log(e)
+        if (DevMode) {
+            let file = require.resolve(__filename)
+            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                conn.sendMessage(jid, file + ' error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+            }
+        }
+    }
 }
-handler.help = ['lirik'].map(v => v + ' <Judul Lagu>')
+    
+handler.help = ['lirik', 'lyrics'].map(v => ' [title] [artist]')
 handler.tags = ['internet']
-handler.command = /^(lirik)$/i
+handler.command = /^(l(irik|yrics))$/i
 
 module.exports = handler
