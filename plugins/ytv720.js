@@ -5,7 +5,9 @@ let handler = async (m, { conn, command, text }) => {
   let res = await xfar.Youtube(text)
 m.reply('*Tunggu Sebentar...*')
 conn.sendFile(m.chat,res.medias[2].url, '', `Youtube Downloader
-720p`, m)
+720p
+jika masih blur, berarti videonya emang ngeblur dari youtubenya
+Atau bisa jadi faktor *MUKA*`, m)
 
 }
 handler.help = ['ytv720 <url>']
