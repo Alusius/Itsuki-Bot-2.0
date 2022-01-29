@@ -1,4 +1,4 @@
-let limit = 1024
+/*let limit = 1024
 let fetch = require('node-fetch')
 const { servers, ytv } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
@@ -38,6 +38,22 @@ handler.botAdmin = false
 handler.fail = null
 handler.exp = 0
 handler.limit = true
+
+module.exports = handler*/
+
+let xfar = require('xfarr-api')
+let fetch = require('node-fetch')
+let handler = async (m, { conn, command, text }) => {
+    if (!text) throw 'Masukkan Link\n\nContoh: .ytmp4 https://youtube.com/xxxxxx'
+  let res = await xfar.Youtube(`${text}`)
+conn.sendFile(m.chat,res.medias[2].url, 'audio.mp3', `Youtube Downloader
+360p`, m)
+
+}
+handler.help = ['ytmp4 <url>']
+handler.tags = ['downloader']
+handler.command = /^ytmp4$/i
+
 
 module.exports = handler
 
