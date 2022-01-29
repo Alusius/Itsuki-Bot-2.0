@@ -45,7 +45,8 @@ let xfar = require('xfarr-api')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text }) => {
     if (!text) throw 'Masukkan Link\n\nContoh: .ytmp4 https://youtube.com/xxxxxx'
-  let res = await xfar.Youtube(`${text}`)
+  let res = await xfar.Youtube(text)
+m.reply(m.chat, '*Tunggu Sebentar...*', m)
 conn.sendFile(m.chat,res.medias[2].url, 'audio.mp3', `Youtube Downloader
 360p`, m)
 
