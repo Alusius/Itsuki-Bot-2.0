@@ -16,7 +16,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
 ${await shortlink(dl_link)}
 `, `Jika Audio tidak di kirim
 silahkan klik link di atas untuk mendownloadnya
-`.trim(), 'ok', '', m)
+`.trim(), 'ok', 'ok', m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
