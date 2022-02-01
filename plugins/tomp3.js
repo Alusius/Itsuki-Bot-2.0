@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   })
 }
 handler.help = ['tomp3 (reply)']
-handler.tags = ['audio']
+handler.tags = ['tools']
 
 handler.command = /^to(mp3|a(udio)?)$/i
 
