@@ -460,20 +460,21 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', "ok", "huuu", {contextInfo:{mentionedJid:users}})
+                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', "ok", "huuu", null)
                                 }
                     }
                 }
                 break
-}
-},
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
                 if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
                 text = text.replace('@user', '@' + participants[0].split('@')[0])
                 if (chat.detect) this.sendMessage(id, text, MessageType.extendedText, {
-                    {contextInfo:{mentionedJid:users}}})
+                    contextInfo: {
+                        mentionedJid: this.parseMention(text)
+                    }
+                })
                 break
         }
     },
