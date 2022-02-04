@@ -465,6 +465,8 @@ module.exports = {
                     }
                 }
                 break
+}
+},
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
