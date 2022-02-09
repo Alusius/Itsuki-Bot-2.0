@@ -5,7 +5,7 @@ wa.me/62896543604477?text=.menu
 Bantu ramein iya 🙏
 */
 
-let { MessageType, Presence } = require('@adiwajshing/baileys')
+let { MessageType, Presence } = require('@adiwajshing/baileys-md')
 
 async function handler(m, { command, conn, text }) {
 	await conn.updatePresence(m.chat, Presence.composing)
