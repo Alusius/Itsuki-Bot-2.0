@@ -27,17 +27,18 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://melcanz.com': 'FWf7jwTE',
-  'https://api.xteam.xyz': '9287183216dd1eb3',
+  'https://melcanz.com': 'apikeymu',
+  'https://api.xteam.xyz': 'apikeymu',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://bsbt-api-rest.herokuapp.com': 'benniismael',
   'https://api.zeks.xyz': 'apivinz',
   'https://hardianto-chan.herokuapp.com': 'hardianto',
   'https://pencarikode.xyz': 'pais', 
   'https://leyscoders-api.herokuapp.com': 'MIMINGANZ',
-  'https://zekais-api.herokuapp.com': 'f4nczIeU',
-  'https://api.lolhuman.xyz': 'ba45c79d85fbd1c42101c6df',
+  'https://zekais-api.herokuapp.com': 'apikeymu',
+  'https://api.lolhuman.xyz': 'apikeymu',
 }
+//cari apikey sendiri ya gaes yak
 
 // Sticker WM
 global.stiker_wait = 'Stiker sedang dibuat'
@@ -50,6 +51,7 @@ global.author = `elyas(bot)
 ig: elyas_tzy`
 
 global.wm = 'by elyas'
+global.watermark = wm
 global.media = 'https://telegra.ph/file/ccb2359d3925fd7af58cd.jpg'
 global.instagram = 'https://instagram.com/elyas_tzy'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23401620&text='
