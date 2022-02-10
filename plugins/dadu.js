@@ -1,10 +1,10 @@
 const dir = [
-  'https://file.io/WG9Zro11P8Nd',
-  'https://file.io/XjpTNo5S2TEg',
-  'https://file.io/ozPfYRnBiTWY',
-  'https://file.io/ZUEIZzcLr4xY',
-  'https://file.io/Ckt14JpmbmAH',
-  'https://file.io/Rw9Eh1Prsem2'
+  'https://file.io/657BjOg4aGoI',
+  'https://file.io/AL0q5mlQSxqR',
+  'https://file.io/BjqlkEFTmmn4',
+  'https://file.io/i2PGiE1BW9EL',
+  'https://file.io/Et7oPlFM6PZu',
+  'https://file.io/YnpjrWxqDhgM'
 ];
 let handler = async (m, { conn }) => {
   conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dadu.webp', '', m)
