@@ -17,7 +17,7 @@ conn.sendButtonLoc(m.chat, await (await fetch(data[0].thumb)).buffer(), txt, wm,
 })
 }
 handler.help = ['film <keyword>']
-handler.tags = ['internet']
+handler.tags = ['film']
 handler.command = /^(film)$/i
 
 module.exports = handler
