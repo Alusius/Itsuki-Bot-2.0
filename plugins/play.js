@@ -42,7 +42,9 @@ ${vid.url}
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: await (await fetch(thumb)).buffer() }, 
-           hydratedFooterText: wm,
+           hydratedFooterText: `jika video tidak sesuai
+silahkan ketik .yta link YouTube untuk mengunduh audio
+dan ketik .ytv link YouTube Untuk Mengunduh Video`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',
