@@ -1,4 +1,4 @@
-/*let fetch = require('node-fetch')
+let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Uhm...url nya mana?'
   let res = await fetch(global.API('xteam', '/dl/tiktok', {
@@ -25,7 +25,7 @@ ${txt}
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(tik(tok)?(dl)?)$/i
-module.exports = handler*/
+module.exports = handler
 
 /*let fetch = require('node-fetch')
 let handler = async (m, { conn, args, command, usedPrefix }) => {
@@ -71,7 +71,7 @@ async function tiktok(url) {
   } catch (e) {
     throw 'Mungkin video private?!'
   }
-}*/
+}
 const hxz = require("hxz-api")
 let handler = async(m,{text, conn}) => {
 
@@ -81,3 +81,4 @@ conn.sendFile(m.chat, nowm, null, 'nih', m)
 }
 handler.command = ['tiktoknowm']
 module.exports = handler
+*/
