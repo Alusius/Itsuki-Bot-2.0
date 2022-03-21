@@ -200,106 +200,102 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
               {
                 "rows": [{
                   "title": `Pemilik Bot`,
-                  "description": "",
+                  "description": "👤owner ganteng disini👤",
                   "rowId": `.owner`
                 },{
                   "title": "INFO BOT",
-                  "description": "",
+                  "description": "informasi bot🔍",
                   "rowId": `${_p}? info`
                 }],
                 "title": "Informasi Bot"
               }, {
                 "rows": [{
                   "title": `SEMUA PERINTAH`,
-                  "description": "",
+                  "description": "Semua fitur bisa dilihat disini🗿👍",
                   "rowId": '.menu2'
                   }, {
                   "title": "ABSEN & VOTING",
-                  "description": "",
+                  "description": "Untuk absen dan voting di dalam Grub🗒️",
                   "rowId": `${_p}? absen`
                 }, {
                   "title": "ANIME MENU",
-                  "description": "",
+                  "description": "Fitur Buat Kaum Wibu🗿🙏",
                   "rowId": `${_p}? anime`
                 }, {
                   "title": "STICKER & CONVERTER",
-                  "description": "",
+                  "description": "Fitur untuk membuat stiker whatsapp🍭",
                   "rowId": `${_p}? sticker`
                 }, {
                   "title": "DOWNLOADER MENU",
-                  "description": "",
+                  "description": "Fitur untuk mendownload sesuatu▶️🎵",
                   "rowId": `${_p}? downloader`
                 }, {
                   "title": "EXP & LIMIT",
-                  "description": "",
+                  "description": "Cek profilmu di datatbase bot!🥇",
                   "rowId": `${_p}? xp`
                 }, {
                   "title": "FUN MENU",
-                  "description": "",
+                  "description": "Buat seru seruan🤡",
                   "rowId": `${_p}? fun`
                 }, {
                   "title": "GAME MENU",
-                  "description": "",
+                  "description": "fitur untuk main game di dalam bot🎮",
                   "rowId": `${_p}? game`
                 }, {
                   "title": "GITHUB MENU",
-                  "description": "",
+                  "description": "Untuk pengguna github🐱",
                   "rowId": `${_p}? github`
                 }, {
                   "title": "GROUP MENU",
-                  "description": "",
+                  "description": "Hanya bisa di gunakan di dalam grup👥",
                   "rowId": `${_p}? group`
                 }, {
                   "title": "IMAGE MENU",
-                  "description": "",
+                  "description": "Fitur untuk mencari gambar🖼️",
                   "rowId": `${_p}? image`
                 }, {
                   "title": "INTERNET MENU",
-                  "description": "",
+                  "description": "fitur untuk searching🔎",
                   "rowId": `${_p}? internet`
                 }, {
                   "title": "ISLAM MENU",
-                  "description": "",
+                  "description": "Islamic menu🕌",
                   "rowId": `${_p}? islam`
                 }, {
                   "title": "KERANG AJAIB",
-                  "description": "",
+                  "description": "bertanya kepada kerang?!🤔",
                   "rowId": `${_p}? kerang`
                 }, {
                   "title": "MAKER MENU",
-                  "description": "",
+                  "description": "Fitur untuk membuat gambar dan logo🙊",
                   "rowId": `${_p}? maker`
                 }, {
                   "title": "OWNER MENU",
-                  "description": "",
+                  "description": "Fitur Khusus Buat Owner Ganteng👻",
                   "rowId": `${_p}? owner`
                 }, {
                   "title": "PENGUBAH SUARA",
-                  "description": "",
+                  "description": "Fitur untuk mengubah suara🎤",
                   "rowId": `${_p}? suara`
                 }, {
                   "title": "PREMIUM MENU",
-                  "description": "",
+                  "description": "Khusus pengguna premium!🤴",
                   "rowId": `${_p}? premium`
                 }, {
                   "title": "QUOTES MENU",
-                  "description": "",
+                  "description": "Buat nyari kata kata🗣️",
                   "rowId": `${_p}? quotes`
-                }, {
-                  "title": "RPG MENU",
-                  "description": "",
-                  "rowId": `${_p}? rpg`
-                }, {
+                },{
                   "title": "STALKER MENU",
-                  "description": "",
+                  "description": "Stalking sosmed🧐",
                   "rowId": `${_p}? stalk`
                 }, {
                   "title": "SHORT LINK",
-                  "description": "",
+                  "description": "Untuk memperpendek Link🔗",
                   "rowId": `${_p}? shortlink`
                 }, {
                   "title": "TOOLS MENU",
-                  "description": "",
+                  "description": "Futur alat🧰",
                   "rowId": `${_p}? tools`
                 }
                   ],
