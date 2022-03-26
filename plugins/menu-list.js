@@ -1,6 +1,3 @@
-//UNTUK PENGGUNA WHATSAPP BUSSINES
-//GUNAKAN MENU KE 2 YAH
-//MOHON MAAF SEBELUMNYA
 let { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
 let levelling = require('../lib/levelling')
 let fs = require('fs')
@@ -13,21 +10,17 @@ let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before:`
-┏━━「 ꜱʜɪʀᴏʙᴏᴛᴢ-ᴍᴅ 」━⬣
-┃ ❖ Version : %version
-┃ ❖ Library : Baileys-MD
-┃ ❖ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
-┃ ❖ Runtime: %uptime
-┗━━━━━━━━⬣
-┏━━〔 INFO USER 〕━⬣
-┃ ❖ Name: %name
-┃ ❖ Status: ---
-┃ ❖ Limit: %limit
-┃ ❖ Money: %money
-┃ ❖ Exp: %totalexp
-┃ ❖ Level: %level
-┃ ❖ Role: %role
-┗━━━━━━━━⬣
+╭────❑ *MENU* ❑────
+❑────❑ %me
+│❒ Version: %version
+│❒ Library: Baileys
+│❒ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
+│❒ Runtime: %uptime
+│❒ Platform: Safari Linux 
+╰❑
+╭────❑「 INFO 」❑────
+${informasibot}
+╰────
 %readmore`.trimStart(),
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
@@ -178,9 +171,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let uptime = clockString(_uptime)
     let waktuwib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 let tulisan = `
-${ucapan()} ${name}. Have a great day！
+${ucapan()} ${name}. Have A Great Day！
 Terimakasih Atas Kunjungan Anda`.trim()
-let sangek = `Berikut adalah list Menu Bot. klik pada "Click Here!" untuk melihat list menu.`
+let sangek = `Berikut Adalah List Menu Bot. Klik Pada "Click Here!" Untuk Melihat List Menu.`
 
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
@@ -195,120 +188,125 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     if (teks == '404') {
         const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
-            title: `*Hai* ${name}👋`,
-            description: `${ucapan()}\n*SILAHKAN PILIH MENU*\n*DI BAWAH YA*`,
+            title: `*Hai* ${name}`,
+            description: `${ucapan()}\n*Silahkan Pilih List Menu*\n*Di Bawah Ya*`,
             buttonText: 'LIST MENU',
             listType: 1,
-            footerText: "",
+            footerText: "Silahkan Tekan Tombol \"LIST MENU\" Untuk Melihat Menu Bot\n\nJika Menemukan Bug/Kesulitan Dalam Penggunaan Bot Silahkan Laporkan/Tanyakan Kepada Owner",
             mtype: 'listMessage',
             sections: [
               {
                 "rows": [{
-                  "title": `|👩🏻‍💼|Owner bot`,
-                  "description": "pemilik Bot",
+                  "title": `OWNER BOT`,
+                  "description": "Nomor Pemilik Bot Chat P/Meminta Save Tidak Akan Di Respon",
                   "rowId": `.owner`
                 },{
-                  "title": "|ℹ️| Info",
-                  "description": "Info Tentang Bot",
+                  "title": "INFO BOT",
+                  "description": "Menampilkan Menu Info",
                   "rowId": `${_p}? info`
                 }],
-                "title": "⟣─────────❲ Tentang Bot dan lainnya ❳──────────⟢"
+                "title": "INFORMASI BOT"
               }, {
                 "rows": [{
-                  "title": `|🧾| Semua Perintah`,
-                  "description": "Memberikan Semua Fitur Bot",
+                  "title": `SEMUA PERINTAH`,
+                  "description": "Menampilkan Menu All",
                   "rowId": '.menu2'
                   }, {
-                  "title": "|📝| Vote & Absen",
-                  "description": "Menu Vote & Absen",
+                  "title": "ABSEN & VOTING",
+                  "description": "Menampilkan Menu Absen",
                   "rowId": `${_p}? absen`
                 }, {
-                  "title": "|⛩️| Anime",
-                  "description": "Cari Anime Di Bot",
+                  "title": "ANIME MENU",
+                  "description": "Menampilkan Menu Anime",
                   "rowId": `${_p}? anime`
                 }, {
-                  "title": "|🎇| Stiker",
-                  "description": "Menu Buat Stiker",
+                  "title": "STICKER & CONVERTER",
+                  "description": "Menampilkan Menu Sticker",
                   "rowId": `${_p}? sticker`
                 }, {
-                  "title": "|📺| Downloader",
-                  "description": "Download Sesuatu Di Bot",
+                  "title": "DOWNLOADER MENU",
+                  "description": "Menampilkan Menu Downloader",
                   "rowId": `${_p}? downloader`
                 }, {
-                  "title": "|📈| XP",
-                  "description": "XP Dan Limit",
+                  "title": "EXP & LIMIT",
+                  "description": "Menampilkan Menu Exp",
                   "rowId": `${_p}? xp`
                 }, {
-                  "title": "|🎠| Fun",
-                  "description": "Menu Ceria",
+                  "title": "FUN MENU",
+                  "description": "Menampilkan Menu Fun",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "|🎮| Game",
-                  "description": "Menu Game",
+                  "title": "GAME MENU",
+                  "description": "Menampilkan Menu Game",
                   "rowId": `${_p}? game`
                 }, {
-                  "title": "|🖱| Github",
-                  "description": "Untuk Github",
+                  "title": "GITHUB MENU",
+                  "description": "Menampilkan Menu Github",
                   "rowId": `${_p}? github`
                 }, {
-                  "title": "|🏢| Grup",
-                  "description": "Menu Group",
+                  "title": "GROUP MENU",
+                  "description": "Menampilkan Menu Group",
                   "rowId": `${_p}? group`
                 }, {
-                  "title": "|🖼️| Random Image",
-                  "description": "Menu Foto Random",
+                  "title": "IMAGE MENU",
+                  "description": "Menampilkan Menu Image",
                   "rowId": `${_p}? image`
                 }, {
-                  "title": "|🖥️| Internet",
-                  "description": "Cari Sesuatu Di Bot",
+                  "title": "INTERNET MENU",
+                  "description": "Menampilkan Menu Internet",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "|🕋| Islam",
-                  "description": "Menu Tentang Islam",
+                  "title": "ISLAM MENU",
+                  "description": "Menampilkan Menu Islam",
                   "rowId": `${_p}? islam`
                 }, {
-                  "title": "|🐚| Kerang Ajaib",
-                  "description": "Menurut Kerang ajaib....",
+                  "title": "KERANG AJAIB",
+                  "description": "Menampilkan Menu Kerang",
                   "rowId": `${_p}? kerang`
                 }, {
-                  "title": "|✒️| Maker & Logo",
-                  "description": "Ciptakan Sesuatu",
+                  "title": "MAKER MENU",
+                  "description": "Menampilkan Menu Maker",
                   "rowId": `${_p}? maker`
                 }, {
-                  "title": "|🧑‍💻| Owner",
-                  "description": "Menu Khusu Owner",
+                  "title": "OWNER MENU",
+                  "description": "Menampilkan Menu Owner",
                   "rowId": `${_p}? owner`
                 }, {
-                  "title": "|🎙| Voice",
-                  "description": "Ubah Pesan Suara,
+                  "title": "PENGUBAH SUARA",
+                  "description": "Menampilkan Menu Voice Changer",
                   "rowId": `${_p}? suara`
                 }, {
-                  "title": "|🔝| Premium",
-                  "description": "Menu Untuk Premium",
+                  "title": "PREMIUM MENU",
+                  "description": "Menampilkan Menu Premium",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "|📑| Quotes",
-                  "description": "Menu Quotes",
+                  "title": "QUOTES MENU",
+                  "description": "Menampilkan Menu Quotes",
                   "rowId": `${_p}? quotes`
-                },{
-                  "title": "|⌨| Stalker",
-                  "description": "Stalking sosmed",
+                }, {
+                  "title": "RPG MENU",
+                  "description": "Menampilkan Menu Rpg",
+                  "rowId": `${_p}? rpg`
+                }, {
+                  "title": "STALKER MENU",
+                  "description": "Menampilkan Menu Stalker",
                   "rowId": `${_p}? stalk`
                 }, {
-                  "title": "|🔗| Short",
-                  "description": "Perpendek Link",
+                  "title": "SHORT LINK",
+                  "description": "Menampilkan Menu Short Link",
                   "rowId": `${_p}? shortlink`
                 }, {
-                  "title": "|🔧| Tools",
-                  "description": "Tools Yang Bisa di Gunakan Di Bot",
+                  "title": "TOOLS MENU",
+                  "description": "Menampilkan Menu Tools",
                   "rowId": `${_p}? tools`
                 }
                   ],
-                "title": "⟣──────────────❲  All-Menu  ❳──────────────⟢"
+                "title": "LIST MENU"
               }
-            ], "contextInfo": {
-              "stanzaId": m.key.id,
-              "participant": m.sender,
+            ], "contextInfo": 
+            {  "stanzaId": m.key.id,
+              "participant": "0@s.whatsapp.net",
+			  "remoteJid": "6283136505591-1614953337@g.us",
               "quotedMessage": m.message
             }
     }}), { userJid: m.participant || m.key.remoteJid, quoted: m });
@@ -330,7 +328,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
         before,
         ...Object.keys(tags).map(tag => {
@@ -338,8 +336,8 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
             ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
               return menu.help.map(help => {
                 return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                  .replace(/%islimit/g, menu.limit ? '🅛' : '')
-                  .replace(/%isPremium/g, menu.premium ? '🅟' : '')
+                  .replace(/%islimit/g, menu.limit ? '(Ⓛ)' : '')
+                  .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
                   .trim()
               }).join('\n')
             }),
@@ -364,9 +362,9 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     let pp = fs.readFileSync('./src/welcome.jpg')
-    await conn.sendHButtonLoc(m.chat,pp, text.trim(), '🅛=limit 🅟=premium', "📍Instagram", instagram, `Kembali Ke List Menu`, `.menu`, m)
+    await conn.sendHButtonLoc(m.chat,pp, text.trim(), 'Hyzerr', "Instagram", instagram, `Back to Menu`, `.menu`, m)
 } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry Bot Surrently Maintenance', m)
     throw e
   }
 }
@@ -383,7 +381,7 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 3
+handler.exp = 2
 
 module.exports = handler
 
