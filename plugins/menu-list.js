@@ -13,16 +13,21 @@ let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before:`
-╭────❑ *MENU* ❑────
-❑────❑ %me
-│✾ Version: %version
-│✾ Library: Baileys-MD
-│✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
-│✾ Runtime: %uptime
-╰❑
-╭────❑「 INFO 」❑────
-${informasibot}
-╰────
+┏━━「 ꜱʜɪʀᴏʙᴏᴛᴢ-ᴍᴅ 」━⬣
+┃ ❖ Version : %version
+┃ ❖ Library : Baileys-MD
+┃ ❖ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
+┃ ❖ Runtime: %uptime
+┗━━━━━━━━⬣
+┏━━〔 INFO USER 〕━⬣
+┃ ❖ Name: %name
+┃ ❖ Status: ---
+┃ ❖ Limit: %limit
+┃ ❖ Money: %money
+┃ ❖ Exp: %totalexp
+┃ ❖ Level: %level
+┃ ❖ Role: %role
+┗━━━━━━━━⬣
 %readmore`.trimStart(),
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
@@ -199,107 +204,107 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
             sections: [
               {
                 "rows": [{
-                  "title": `Pemilik Bot`,
-                  "description": "👤owner ganteng disini👤",
+                  "title": `|👩🏻‍💼|Owner bot`,
+                  "description": "pemilik Bot",
                   "rowId": `.owner`
                 },{
-                  "title": "INFO BOT",
-                  "description": "informasi bot🔍",
+                  "title": "|ℹ️| Info",
+                  "description": "Info Tentang Bot",
                   "rowId": `${_p}? info`
                 }],
-                "title": "Informasi Bot"
+                "title": "⟣─────────❲ Tentang Bot dan lainnya ❳──────────⟢"
               }, {
                 "rows": [{
-                  "title": `SEMUA PERINTAH`,
-                  "description": "Semua fitur bisa dilihat disini🗿👍",
+                  "title": `|🧾| Semua Perintah`,
+                  "description": "Memberikan Semua Fitur Bot",
                   "rowId": '.menu2'
                   }, {
-                  "title": "ABSEN & VOTING",
-                  "description": "Untuk absen dan voting di dalam Grub🗒️",
+                  "title": "|📝| Vote & Absen",
+                  "description": "Menu Vote & Absen",
                   "rowId": `${_p}? absen`
                 }, {
-                  "title": "ANIME MENU",
-                  "description": "Fitur Buat Kaum Wibu🗿🙏",
+                  "title": "|⛩️| Anime",
+                  "description": "Cari Anime Di Bot",
                   "rowId": `${_p}? anime`
                 }, {
-                  "title": "STICKER & CONVERTER",
-                  "description": "Fitur untuk membuat stiker whatsapp🍭",
+                  "title": "|🎇| Stiker",
+                  "description": "Menu Buat Stiker",
                   "rowId": `${_p}? sticker`
                 }, {
-                  "title": "DOWNLOADER MENU",
-                  "description": "Fitur untuk mendownload sesuatu▶️🎵",
+                  "title": "|📺| Downloader",
+                  "description": "Download Sesuatu Di Bot",
                   "rowId": `${_p}? downloader`
                 }, {
-                  "title": "EXP & LIMIT",
-                  "description": "Cek profilmu di datatbase bot!🥇",
+                  "title": "|📈| XP",
+                  "description": "XP Dan Limit",
                   "rowId": `${_p}? xp`
                 }, {
-                  "title": "FUN MENU",
-                  "description": "Buat seru seruan🤡",
+                  "title": "|🎠| Fun",
+                  "description": "Menu Ceria",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "GAME MENU",
-                  "description": "fitur untuk main game di dalam bot🎮",
+                  "title": "|🎮| Game",
+                  "description": "Menu Game",
                   "rowId": `${_p}? game`
                 }, {
-                  "title": "GITHUB MENU",
-                  "description": "Untuk pengguna github🐱",
+                  "title": "|🖱| Github",
+                  "description": "Untuk Github",
                   "rowId": `${_p}? github`
                 }, {
-                  "title": "GROUP MENU",
-                  "description": "Hanya bisa di gunakan di dalam grup👥",
+                  "title": "|🏢| Grup",
+                  "description": "Menu Group",
                   "rowId": `${_p}? group`
                 }, {
-                  "title": "IMAGE MENU",
-                  "description": "Fitur untuk mencari gambar🖼️",
+                  "title": "|🖼️| Random Image",
+                  "description": "Menu Foto Random",
                   "rowId": `${_p}? image`
                 }, {
-                  "title": "INTERNET MENU",
-                  "description": "fitur untuk searching🔎",
+                  "title": "|🖥️| Internet",
+                  "description": "Cari Sesuatu Di Bot",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "ISLAM MENU",
-                  "description": "Islamic menu🕌",
+                  "title": "|🕋| Islam",
+                  "description": "Menu Tentang Islam",
                   "rowId": `${_p}? islam`
                 }, {
-                  "title": "KERANG AJAIB",
-                  "description": "bertanya kepada kerang?!🤔",
+                  "title": "|🐚| Kerang Ajaib",
+                  "description": "Menurut Kerang ajaib....",
                   "rowId": `${_p}? kerang`
                 }, {
-                  "title": "MAKER MENU",
-                  "description": "Fitur untuk membuat gambar dan logo🙊",
+                  "title": "|✒️| Maker & Logo",
+                  "description": "Ciptakan Sesuatu",
                   "rowId": `${_p}? maker`
                 }, {
-                  "title": "OWNER MENU",
-                  "description": "Fitur Khusus Buat Owner Ganteng👻",
+                  "title": "|🧑‍💻| Owner",
+                  "description": "Menu Khusu Owner",
                   "rowId": `${_p}? owner`
                 }, {
-                  "title": "PENGUBAH SUARA",
-                  "description": "Fitur untuk mengubah suara🎤",
+                  "title": "|🎙| Voice",
+                  "description": "Ubah Pesan Suara,
                   "rowId": `${_p}? suara`
                 }, {
-                  "title": "PREMIUM MENU",
-                  "description": "Khusus pengguna premium!🤴",
+                  "title": "|🔝| Premium",
+                  "description": "Menu Untuk Premium",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "QUOTES MENU",
-                  "description": "Buat nyari kata kata🗣️",
+                  "title": "|📑| Quotes",
+                  "description": "Menu Quotes",
                   "rowId": `${_p}? quotes`
                 },{
-                  "title": "STALKER MENU",
-                  "description": "Stalking sosmed🧐",
+                  "title": "|⌨| Stalker",
+                  "description": "Stalking sosmed",
                   "rowId": `${_p}? stalk`
                 }, {
-                  "title": "SHORT LINK",
-                  "description": "Untuk memperpendek Link🔗",
+                  "title": "|🔗| Short",
+                  "description": "Perpendek Link",
                   "rowId": `${_p}? shortlink`
                 }, {
-                  "title": "TOOLS MENU",
-                  "description": "Futur alat🧰",
+                  "title": "|🔧| Tools",
+                  "description": "Tools Yang Bisa di Gunakan Di Bot",
                   "rowId": `${_p}? tools`
                 }
                   ],
-                "title": "LIST MENU"
+                "title": "⟣──────────────❲  All-Menu  ❳──────────────⟢"
               }
             ], "contextInfo": {
               "stanzaId": m.key.id,
@@ -393,18 +398,18 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Selamat dinihari🌃"
+  res = "Selamat dinihari"
   if (time >= 4) {
-    res = "Selamat pagi🏞️"
+    res = "Selamat pagi"
   }
   if (time > 10) {
-    res = "Selamat siang🏙️"
+    res = "Selamat siang"
   }
   if (time >= 15) {
-    res = "Selamat sore🌇"
+    res = "Selamat sore"
   }
   if (time >= 18) {
-    res = "Selamat malam🌌"
+    res = "Selamat malam"
   }
   return res
 }
