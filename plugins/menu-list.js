@@ -1,6 +1,6 @@
 // thanks to johanes
 
-let { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
+let { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 wm = global.wm
 let levelling = require('../lib/levelling')
 let fs = require('fs')
@@ -263,7 +263,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
       const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: `*${ucapan()}, ${name}*`,
-            description: `┌────〔 *𝚂𝙷𝙸𝚁𝙾-𝙼𝙳* 〕───⬣
+            description: `┌────〔 *${wm}* 〕───⬣
 │⬡ Aktif selama ${uptime}
 │⬡ _*${Object.keys(global.db.data.users).length}*_ Pengguna
 │⬡ Mode : *${global.opts['self'] ? 'Self' : 'publik'}*
