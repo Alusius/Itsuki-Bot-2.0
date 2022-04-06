@@ -53,14 +53,14 @@ ${ucapan()} %name
 ☂︎ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* *Chat Terbanned*
 ☂︎ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 
-⃝▣「 *I N F O  C M D* 」
+⃝▣──「 *INFO CMD* 」───⬣
 │ *Ⓟ* = Premium
 │ *Ⓛ* = Limit
-▣──···
+▣────────────⬣
 %readmore`.trimStart(), 
- header: '⃝▣     「 *%category* 」',
+ header: '⃝▣──「 *%category* 」───⬣',
  body: '│☂︎ %cmd %isPremium %islimit',
- footer: '▣──···\n',
+ footer: '▣───────────⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
