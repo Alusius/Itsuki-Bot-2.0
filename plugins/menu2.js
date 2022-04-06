@@ -28,17 +28,21 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭────❑ *MENU* ❑────
-❑────❑ %me
-│✾ Version: %version
-│✾ Library: Baileys-MD
-│✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
-│✾ Runtime: %uptime
-╰❑
-╭────❑「 INFO 」❑────
-${informasibot}
-╰────
+「 *MENU ALL* 」
+☂︎ *Bot Name:* ${wm}
+☂︎ *Lib*: Baileys-MD
+☂︎ *${Object.keys(global.db.data.users).length}* *Pengguna*
+☂︎ *Prefix:* [. / #]
+☂︎ *Uptime:* %uptime
+☂︎ *Mode:* ${global.opts['self'] ? 'Self' : 'publik'}
+☂︎ *Database:* %rtotalreg dari %totalreg
+☂︎ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* *Chat Terbanned*
+☂︎ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 
+⃝▣──「 *INFO CMD* 」───⬣
+│ *Ⓟ* = Premium
+│ *Ⓛ* = Limit
+▣────────────⬣
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '│ • %cmd %islimit %isPremium',
@@ -189,9 +193,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     throw e
   }
 }
-handler.help = ['menu2']
+handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = /^(menu2)$/i
+handler.command = /^(allmenu)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
