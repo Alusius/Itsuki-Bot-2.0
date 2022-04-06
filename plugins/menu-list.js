@@ -58,8 +58,8 @@ ${ucapan()} %name
 │ *Ⓛ* = Limit
 ▣────────────⬣
 %readmore`.trimStart(), 
- header: '⃝▣──「 *%category* 」───⬣',
- body: '│☂︎ %cmd %isPremium %islimit',
+ header: '⃝▣──「 %category 」───⬣',
+ body: '│○ %cmd %isPremium %islimit',
  footer: '▣───────────⬣\n',
   after: `
 *%npmname@^%version*
