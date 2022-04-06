@@ -1,11 +1,11 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
   'main': '*MENU UTAMA*',
   'advanced': '*ADVANCED*',
-  'absen': '*MENU ABSEN*',
+  'rpg': '*MENU RPG*',
   'anime': '*MENU ANIME*',
   'sticker': '*MENU CONVERT*',
   'downloader': '*MENU DOWNLOADER*',
@@ -16,13 +16,13 @@ let tags = {
   'group': '*MENU GROUP*',
   'image': '*MENU IMAGE*',
   'info': '*MENU INFO*',
+  'absen': '*MENU ABSEN*',
   'internet': '*INTERNET*',
   'islam' : '*MENU ISLAMI*',
   'kerang': '*MENU KERANG*',
   'maker': '*MENU MAKER*',
   'owner': '*MENU OWNER*',
   'quotes' : '*MENU QUOTES*',
-  'rpg': '*MENU RPG*',
   'stalk': '*MENU STALK*',
   'tools': '*MENU TOOLS*',
 }
@@ -44,9 +44,9 @@ const defaultMenu = {
 │ *Ⓛ* = Limit
 ▣────────────⬣
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '⃝▣──「 %category 」───⬣',
+  body: '│ ○ %cmd %islimit %isPremium',
+  footer: '▣────────────⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
