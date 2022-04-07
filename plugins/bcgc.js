@@ -1,34 +1,20 @@
-//KALAU MAU BCGC REPLY PESAN YANG MAU DI BC
-//KALAU GAK PAKE REPLY MASIH ERROR
-let handler = async (m, { conn, text, participants }) => {
-const {delay} = require("@adiwajshing/baileys-md")
-
-async function f(){
-let getGroups = await conn.groupFetchAllParticipating()
-
-let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
-
-let anu = groups.map(v => v.id)
-
-m.reply(`Mengirim Broadcast Ke ${anu.length} Group Chat, Waktu Selesai ${anu.length * 1.5} detik`)
-
-for (let i of anu) {
-
-await delay(100)
-
-conn.copyNForward(i, m.quoted.fakeObj, true)
-
+let handler = async (m, { conn, isROwner, text }) => {
+    const delay = time => new Promise(res => setTimeout(res, time))
+    let getGroups = await conn.groupFetchAllParticipating()
+    let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+    let anu = groups.map(v => v.id)
+    var pesan = m.quoted && m.quoted.text ? m.quoted.text : text
+    if(!pesan) throw 'teksnya?'
+    m.reply(`Mengirim Broadcast Ke ${anu.length} Chat, Waktu Selesai ${anu.length * 0.5 } detik`)
+    for (let i of anu) {
+    await delay(500)
+    conn.sendBut(i, `${pesan}`, wm, 'OWNER', '.owner', null).catch(_ => _)
+    }
+  m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 }
-
-m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group Chat`)
-
-}
-
-return f()
-}
-handler.help = ['bcgc']
+handler.help = ['bcgcbot <teks>']
 handler.tags = ['owner']
-handler.command = /^(bcgc)$/i
+handler.command = /^((broadcastgc|bcgc)bot)$/i
 
 handler.owner = true
 
