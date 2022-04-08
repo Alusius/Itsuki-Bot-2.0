@@ -43,14 +43,8 @@ global.APIKeys = { // APIKey Here
 // Sticker WM
 global.stiker_wait = 'Stiker sedang dibuat'
 global.packname = 'stickerby'
-global.author = `shiro(bot)
-
-
-
-
-ig: hyzer_stfu`
-
-global.wm = 'By Hyzer'
+global.author = `𝚂𝙷𝙸𝚁𝙾-𝙼𝙳`
+global.wm = '𝙷𝚈𝚉𝙴𝚁 𝙾𝙵𝙵𝙸𝙲𝙸𝙰𝙻'
 global.watermark = wm
 global.media = 'https://telegra.ph/file/72168c6f1aaa90315c369.jpg'
 global.instagram = 'https://instagram.com/hyzer-stfu'
