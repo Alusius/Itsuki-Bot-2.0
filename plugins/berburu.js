@@ -1,11 +1,20 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn }) => {
-    let __timers = (new Date - global.db.data.users[m.sender].as)
-    let _timers = (500000 - __timers)
+    let ___timers = (new Date - global.db.data.users[m.sender].as)
+    let _timers = (500000 - ___timers)
     let timers = clockString(_timers) 
     let user = global.db.data.users[m.sender]
-    let wm = global.botwm
-    
+    let wm = global.wm
+    let buttons = [
+        
+{buttonId: '.kandang', buttonText: {displayText: 'Kandang 🐾'}, type: 1}, 
+]
+const buttonMessage = {
+    contentText: `📍 Sepertinya Kakak Sudah Kecapekan\nSilahkan Istirahat dulu Untuk melanjutkan berburu !\n🕖 *${timers}*`,
+    footerText: `${wm}`, 
+    buttons: buttons,
+    headerType: 1
+}
     if (new Date - global.db.data.users[m.sender].as > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 7)}`
 let randomaku2 = `${Math.floor(Math.random() * 7)}`
@@ -71,7 +80,7 @@ global.db.data.users[m.sender].babi += rbrb11
 global.db.data.users[m.sender].ayam += rbrb12
 
 setTimeout(() => {
-                     conn.sendButton(m.chat, hsl, wm, 'Kandang', '#kandang',m)
+                     conn.sendBut(m.chat, hsl, wm, 'Kandang', '#kandang',m)
                      }, 20000) 
                
                      setTimeout(() => {
@@ -90,7 +99,7 @@ setTimeout(() => {
                      m.reply('_Sedang Berburu..._')
                      }, 0) 
   user.as = new Date * 1
-    } else conn.sendBut(m.chat, `馃晵 Sepertinya Kakak Sudah Kecapekan\nSilahkan Istirahat dulu Untuk melanjutkan berburu !\n馃晵 *${timers}*`, `By Lui`, 'Kandang', '.kandang', m)
+    } else conn.sendBut(m.chat, `📍 Sepertinya Kakak Sudah Kecapekan\nSilahkan Istirahat dulu Untuk melanjutkan berburu !\n🕖 *${timers}*`, wm, 'Inventory', '.inv',m )
 }
 handler.help = ['berburu']
 handler.tags = ['rpg']
