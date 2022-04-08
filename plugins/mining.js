@@ -1,27 +1,24 @@
 let handler = async (m, { conn }) => {
     let user = global.db.data.users[m.sender]
     let __timers = (new Date - user.lastmining)
-    let _timers = (240000 - __timers)
+    let _timers = (300000 - __timers)
     let timers = clockString(_timers) 
     let botol = global.botwm
-    let minsm = `${Math.floor(Math.random() * 30)}`.trim()
-    let minim = `${Math.floor(Math.random() * 25)}`.trim() 
-    let minam = `${Math.floor(Math.random() * 100)}`.trim() 
-    let minkm = `${Math.floor(Math.random() * 150)}`.trim() 
-    let minbm = `${Math.floor(Math.random() * 2)}`.trim() 
+    let minim = `${Math.floor(Math.random() * 3)}`.trim() 
+    let minam = `${Math.floor(Math.random() * 5)}`.trim() 
+    let minkm = `${Math.floor(Math.random() * 10)}`.trim() 
 
    if ( user.pickaxe > 0 ) {
-    if (new Date - user.lastmining > 240000) {
-      user.diamond += minsm * 1
+    if (new Date - user.lastmining > 3000000) {
+
       user.emas += minim * 1
       user.iron += minam * 1
       user.string += minkm * 1
-      user.mythic += minbm * 1
       user.lastmining = new Date * 1
             
-    m.reply(`Kamu Menambang Di ${pickRandom(['⛰️Lembah', '⛰️Goa mletre', '🏞️Sungai Selandia', '⛰️Goa texas', '...'])}\n*⚒️Hasil Tambang*\n💎Diamond: *${minsm}*\n🪙Emas: *${minim}*\n⛓️Besi: *${minam}*\n🕸️String: *${minkm}*\nDan Juga Kamu Mendapatkan Hadiah Rare Tambahan\n🗳️Mythic Crate:*${minbm}*`)
-      } else conn.reply( m.chat, `Tunggu 🕓${timers} lagi, untuk menambang`, m)
-    } else conn.reply( m.chat, `Kamu Tidak Mempunyai *⛏️Pickaxe* untuk menambang\nBuat Lah Pickaxe menggunakan string kayu dan batu!`,m )
+    m.reply(`Kamu Menambang Di ${pickRandom(['⛰️Lembah', '⛰️Goa mletre', '🏞️Sungai Selandia', '⛰️Goa texas', '...'])}\n*⚒️Hasil Tambang:* 🪙Emas: *${minim}*\n⛓️Besi: *${minam}*\n🕸️String: *${minkm}*`)
+      } else conn.sendBut( m.chat, `Tunggu 🕓${timers} lagi, untuk menambang`, `${botol}`, `⋮☰ Back`, `.menu`, m)
+    } else conn.sendBut( m.chat, `Kamu Tidak Mempunyai *⛏️Pickaxe* untuk menambang\nBuat Lah Pickaxe menggunakan string kayu dan batu!`, `${wm}`, `Craft Pickaxe`, `.craft pickaxe`,m )
   }
 
 handler.help = ['mining']
@@ -40,3 +37,5 @@ function clockString(ms) {
   console.log({ms,h,m,s})
   return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
 }
+
+let wm = global.wm
