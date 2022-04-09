@@ -1,6 +1,7 @@
 //UNTUK PENGGUNA WHATSAPP BUSSINES
 //GUNAKAN MENU KE 2 YAH
-//MOHON MAAF SEBELUMNYA
+//CRETED BY HYZER OFFICIAL
+//JANGAN HAPUS NAMA SAYA, LU CUMA MAKE
 let { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 wm = global.wm
 let levelling = require('../lib/levelling')
@@ -14,29 +15,23 @@ let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before:`
-    「 TODAY 」
-☂︎ *Days:* %week %weton
-☂︎ *Date:* %date
-☂︎ *Islamic Date:* %dateIslamic
-☂︎ *Time:* %time
-
- 「 INFO USER 」
-☂︎ Name: %name
-☂︎ Status: --
-☂︎ Limit: %limit
-☂︎ Money: %money
-☂︎ Exp: %totalexp
-☂︎ Level: %level
-☂︎ Role: %role
-
-  「 INFO BOT 」
-☂︎ Mode: ${global.opts['self'] ? 'Self' : 'Publik'}
-☂︎ Memory Used : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB
-☂︎ Total Memory: ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-☂︎ Runtime: %uptime ( %muptime )
-☂︎ Version: %version
-☂︎ Database: %rtotalreg dari %totalreg
-l
+  ⬣───「 *DASHBOARD* 」───⬣
+  
+┌─── 「 TODAY 」───⬣
+│☂︎ *Days:* %week %weton
+│☂︎ *Date:* %date
+│☂︎ *Islamic Date:* %dateIslamic
+│☂︎ *Time:* %time
+╰────────────⬣
+┌───「 INFO USER 」──⬣
+│☂︎ Name: %name
+│☂︎ Status: --
+│☂︎ Limit: %limit
+│☂︎ Money: %money
+│☂︎ Exp: %totalexp
+│☂︎ Level: %level
+│☂︎ Role: %role
+╰────────────⬣
 ⃝▣──「 *INFO CMD* 」───⬣
 │ *Ⓟ* = Premium
 │ *Ⓛ* = Limit
@@ -227,7 +222,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                         
       const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
-            title: ``,
+            title: `${ucapan()}, ${name}`,
             description: `┌────〔 *${wm}* 〕───⬣
 │⬡ Aktif selama ${uptime}
 │⬡ _*${Object.keys(global.db.data.users).length}*_ Pengguna
@@ -254,95 +249,95 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                 "title": "INFORMASI BOT"
               }, {
                 "rows": [{
-                  "title": `SEMUA PERINTAH`,
+                  "title": `☰ SEMUA PERINTAH`,
                   "description": "Menampilkan Menu All",
                   "rowId": '.? all'
                   }, {
-                  "title": "ABSEN & VOTING",
+                  "title": "☰ ABSEN & VOTING",
                   "description": "Menampilkan Menu Absen",
                   "rowId": `${_p}? absen`
                 }, {
-                  "title": "ANIME MENU",
+                  "title": "☰ ANIME MENU",
                   "description": "Menampilkan Menu Anime",
                   "rowId": `${_p}? anime`
                 }, {
-                  "title": "STICKER & CONVERTER",
+                  "title": "☰ STICKER & CONVERTER",
                   "description": "Menampilkan Menu Sticker",
                   "rowId": `${_p}? sticker`
                 }, {
-                  "title": "DOWNLOADER MENU",
+                  "title": "☰ DOWNLOADER MENU",
                   "description": "Menampilkan Menu Downloader",
                   "rowId": `${_p}? downloader`
                 }, {
-                  "title": "EXP & LIMIT",
+                  "title": "☰ EXP & LIMIT",
                   "description": "Menampilkan Menu Exp",
                   "rowId": `${_p}? xp`
                 }, {
-                  "title": "FUN MENU",
+                  "title": "☰ FUN MENU",
                   "description": "Menampilkan Menu Fun",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "GAME MENU",
+                  "title": "☰ GAME MENU",
                   "description": "Menampilkan Menu Game",
                   "rowId": `${_p}? game`
                 }, {
-                  "title": "GITHUB MENU",
+                  "title": "☰ GITHUB MENU",
                   "description": "Menampilkan Menu Github",
                   "rowId": `${_p}? github`
                 }, {
-                  "title": "GROUP MENU",
+                  "title": "☰ GROUP MENU",
                   "description": "Menampilkan Menu Group",
                   "rowId": `${_p}? group`
                 }, {
-                  "title": "IMAGE MENU",
+                  "title": "☰ IMAGE MENU",
                   "description": "Menampilkan Menu Image",
                   "rowId": `${_p}? image`
                 }, {
-                  "title": "INTERNET MENU",
+                  "title": "☰ INTERNET MENU",
                   "description": "Menampilkan Menu Internet",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "ISLAM MENU",
+                  "title": "☰ ISLAM MENU",
                   "description": "Menampilkan Menu Islam",
                   "rowId": `${_p}? islam`
                 }, {
-                  "title": "KERANG AJAIB",
+                  "title": "☰ KERANG AJAIB",
                   "description": "Menampilkan Menu Kerang",
                   "rowId": `${_p}? kerang`
                 }, {
-                  "title": "MAKER MENU",
+                  "title": "☰ MAKER MENU",
                   "description": "Menampilkan Menu Maker",
                   "rowId": `${_p}? maker`
                 }, {
-                  "title": "OWNER MENU",
+                  "title": "☰ OWNER MENU",
                   "description": "Menampilkan Menu Owner",
                   "rowId": `${_p}? owner`
                 }, {
-                  "title": "PENGUBAH SUARA",
+                  "title": "☰ PENGUBAH SUARA",
                   "description": "Menampilkan Menu Voice Changer",
                   "rowId": `${_p}? suara`
                 }, {
-                  "title": "PREMIUM MENU",
+                  "title": "☰ PREMIUM MENU",
                   "description": "Menampilkan Menu Premium",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "QUOTES MENU",
+                  "title": "☰ QUOTES MENU",
                   "description": "Menampilkan Menu Quotes",
                   "rowId": `${_p}? quotes`
                 }, {
-                  "title": "RPG MENU",
+                  "title": "☰ RPG MENU",
                   "description": "Menampilkan Menu Rpg",
                   "rowId": `${_p}? rpg`
                 }, {
-                  "title": "STALKER MENU",
+                  "title": "☰ STALKER MENU",
                   "description": "Menampilkan Menu Stalker",
                   "rowId": `${_p}? stalk`
                 }, {
-                  "title": "SHORT LINK",
+                  "title": "☰ SHORT LINK",
                   "description": "Menampilkan Menu Short Link",
                   "rowId": `${_p}? shortlink`
                 }, {
-                  "title": "TOOLS MENU",
+                  "title": "☰ TOOLS MENU",
                   "description": "Menampilkan Menu Tools",
                   "rowId": `${_p}? tools`
                 }
@@ -381,8 +376,8 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
             ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
               return menu.help.map(help => {
                 return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                  .replace(/%islimit/g, menu.limit ? '🅛' : '')
-                  .replace(/%isPremium/g, menu.premium ? '🅟' : '')
+                  .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
+                  .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '')
                   .trim()
               }).join('\n')
             }),
