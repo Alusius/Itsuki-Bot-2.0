@@ -6,8 +6,19 @@ let handler = async (m, { conn, command, args }) => {
   if (global.db.data.users[m.sender].exp >= xpperlimit * count) {
     global.db.data.users[m.sender].exp -= xpperlimit * count
     global.db.data.users[m.sender].limit += count
-    conn.sendBut(m.chat, `-${xpperlimit * count} XP\n+ ${count} Limit`, wm, 'Buy All', '.buyall', m)
-  } else conn.sendBut(m.chat, `XP tidak mencukupi untuk membeli ${count} limit`, wm, 'Klaim Harian', '.daily', m)
+    fdoc = {
+  key : {
+  remoteJid: 'status@broadcast',
+  participant : '0@s.whatsapp.net'
+  },
+  message: {
+  documentMessage: {
+  title: wm, 
+                            }
+                          }
+                        }
+    conn.sendBut(m.chat, `-${xpperlimit * count} XP\n+ ${count} Limit`, wm, 'Buy All', '.buyall', fdoc)
+  } else conn.sendBut(m.chat, `XP tidak mencukupi untuk membeli ${count} limit`, wm, 'Klaim Harian', '.daily', fdoc)
 }
 handler.help = ['buy<jumlah limit>', 'buy <jumlah limit>', 'buyall']
 handler.tags = ['xp']
@@ -26,3 +37,4 @@ handler.exp = 0
 
 module.exports = handler
 
+let wm = global.wm
