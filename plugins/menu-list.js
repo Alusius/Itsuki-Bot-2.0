@@ -208,29 +208,31 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     }
   })
     if (teks == '404') {
-   fdoc2 = {
-  key : {
-  remoteJid: 'status@broadcast',
-  participant : '0@s.whatsapp.net'
-  },
-  message: {
-  documentMessage: {
-  title: wm, 
-                            }
-                          }
-                        }
-                        
+   ftrol = {
+	"key": {
+    "participants":"0@s.whatsapp.net",
+		"remoteJid": "status@broadcast",
+		"fromMe": false,
+		"id": ""
+	},
+	"message": {
+		"contactMessage": {
+			"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+		}
+	},
+	"participant": "0@s.whatsapp.net"
+}                        
       const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: `${ucapan()}, ${name}`,
-            description: `┌────〔 *${wm}* 〕───⬣
-│⬡ Aktif selama ${uptime}
-│⬡ _*${Object.keys(global.db.data.users).length}*_ Pengguna
-│⬡ Mode : *${global.opts['self'] ? 'Self' : 'publik'}*
-│⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-│⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
-│⬡ *スパムしないでください*
-╰────────────────⬣`,
+            description: `┏━━━━〔 *${wm}* 〕━━━⬣
+┃⬡ Aktif selama ${uptime}
+┃⬡ ${Object.keys(global.db.data.users).length} Pengguna
+┃⬡ Mode : ${global.opts['self'] ? 'Self' : 'publik'}
+┃⬡ ${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length} Chat Terbanned
+┃⬡ ${Object.entries(global.db.data.users).filter(user => user[1].banned).length} Pengguna Terbanned
+┃⬡ スパムしないでください
+┗━━━━━━━━━━━━━━━⬣`,
             buttonText: 'LIST MENU',
             listType: 1,
             footerText: "𝚂𝙸𝙻𝙰𝙷𝙺𝙰𝙽 𝙿𝙸𝙻𝙸𝙷 𝙼𝙴𝙽𝚄 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷",
@@ -349,7 +351,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
               "participant": m.sender,
               "quotedMessage": m.message
             }
-    }}), { userJid: m.participant || m.key.remoteJid, quoted: fdoc2 });
+    }}), { userJid: m.participant || m.key.remoteJid, quoted: ftrol });
     return await conn.relayMessage(
         m.key.remoteJid,
         template.message,
@@ -446,9 +448,9 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     throw e
   }
 }
-handler.help = ['command']
+handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(command)$/i
+handler.command = /^(menu|help|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
