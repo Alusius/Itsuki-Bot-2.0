@@ -1,6 +1,8 @@
+let fs = require('fs')
+
 global.owner = ['6283182270674'] // Put your number here
 global.mods = [] // Want some help?
-global.prems = [] // Premium user has unlimited limit
+global.prems = JSON.parse(fs.readFileSync('./src/premium.json')
 global.APIs = { // API Prefix
   // name: 'https://website'
   amel: 'https://melcanz.com',
@@ -88,7 +90,6 @@ global.rpg = {
   }
 }
 
-let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
