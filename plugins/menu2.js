@@ -1,11 +1,11 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
   'main': '*MENU UTAMA*',
   'advanced': '*ADVANCED*',
-  'absen': '*MENU ABSEN*',
+  'rpg': '*MENU RPG*',
   'anime': '*MENU ANIME*',
   'sticker': '*MENU CONVERT*',
   'downloader': '*MENU DOWNLOADER*',
@@ -16,33 +16,37 @@ let tags = {
   'group': '*MENU GROUP*',
   'image': '*MENU IMAGE*',
   'info': '*MENU INFO*',
+  'absen': '*MENU ABSEN*',
   'internet': '*INTERNET*',
   'islam' : '*MENU ISLAMI*',
   'kerang': '*MENU KERANG*',
   'maker': '*MENU MAKER*',
   'owner': '*MENU OWNER*',
   'quotes' : '*MENU QUOTES*',
-  'rpg': '*MENU RPG*',
   'stalk': '*MENU STALK*',
   'tools': '*MENU TOOLS*',
 }
 const defaultMenu = {
   before: `
-╭────❑ *MENU* ❑────
-❑────❑ %me
-│✾ Version: %version
-│✾ Library: Baileys-MD
-│✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
-│✾ Runtime: %uptime
-╰❑
-╭────❑「 INFO 」❑────
-${informasibot}
-╰────
+「 *MENU ALL* 」
+☂︎ *Bot Name:* ${wm}
+☂︎ *Lib*: Baileys-MD
+☂︎ *${Object.keys(global.db.data.users).length}* *Pengguna*
+☂︎ *Prefix:* [. / #]
+☂︎ *Uptime:* %uptime
+☂︎ *Mode:* ${global.opts['self'] ? 'Self' : 'publik'}
+☂︎ *Database:* %rtotalreg dari %totalreg
+☂︎ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* *Chat Terbanned*
+☂︎ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 
+⃝▣──「 *INFO CMD* 」───⬣
+│ *Ⓟ* = Premium
+│ *Ⓛ* = Limit
+▣────────────⬣
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '⃝▣──「 %category 」───⬣',
+  body: '│ ○ %cmd %islimit %isPremium',
+  footer: '▣────────────⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -189,9 +193,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     throw e
   }
 }
-handler.help = ['menu']
+handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = /^(menu)$/i
+handler.command = /^(allmenu)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

@@ -1,4 +1,4 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 const { servers, yta, ytv } = require('../lib/y2mate')
 let fs = require('fs')
 let yts = require('yt-search')
@@ -42,7 +42,9 @@ ${vid.url}
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: await (await fetch(thumb)).buffer() }, 
-           hydratedFooterText: wm,
+           hydratedFooterText: `jika video tidak sesuai
+silahkan ketik .yta link YouTube untuk mengunduh audio
+dan ketik .ytv link YouTube Untuk Mengunduh Video`,
            hydratedButtons: [{
              urlButton: {
                displayText: '📍instagram',

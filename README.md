@@ -1,10 +1,10 @@
 <p align="center">
-<img src="https://telegra.ph/file/5a28bc4534bf122fcc882.jpg" alt="EBOT MD" width="250"/>
+<img src="https://telegra.ph/file/780bc71b9c7a90cb84e58.jpg" alt="Hyzer-MD" width="250"/>
 
 
 </p>
 <p align="center">
-<a href="#"><img title="EBOT MD" src="https://img.shields.io/badge/GANTI SESSIONNYA DULU SEBELUM PAKAI-red?colorA=%255ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="Hyzer-MD" src="https://img.shields.io/badge/GANTI SESSIONNYA DULU SEBELUM PAKAI-red?colorA=%255ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
 </p>
@@ -21,9 +21,9 @@
 
 ---
 
-# Ebot Whatsapp MD
+# Hyzer Whatsapp MD
 ## Information
-> EBOT whatsapp using a Baileys library.
+> HyBot whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
 >
 > • NOTE: INI SC GAK BISA BUAT SESSION DI TERMUX YA, JADI KALIAN CARI SESSION DULU PAKAI SC LAIN 
@@ -36,9 +36,9 @@
 
 <h3 align="center">Made by :</h3>
 <p align="center">
-  </a href="https://github.com/ilmanhdyt"><img src="https://github.com/Paquito1923.png?size=128" height="128" width="128" /></a>
+  </a href="https://github.com/ilmanhdyt"><img src="https://github.com/Hyzerr.png?size=128" height="128" width="128" /></a>
   </a href="https://github.com/ilmanhdyt"><img src="https://github.com/ilmanhdyt.png?size=128" height="128" width="128" /></a>
-  <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=128" height="128" width="128" /></a>
+  </a href="https://github.com/Paquito1923"><img src="https://github.com/Paquito1923.png?size=128" height="128" width="128" /></a>
 </p>
 
 ## How To Change Menu Display
@@ -128,8 +128,8 @@ pkg install nodejs
 pkg install ffmpeg
 pkg install imagemagick
 pkg install yarn
-git clone https://github.com/Paquito1923/elyasmd
-cd elyasmd
+git clone https://github.com/Hyzerr/Hyzer-MD-V2
+cd Hyzer-MD-V2
 yarn
 mc
 ganti session
