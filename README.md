@@ -26,8 +26,7 @@
 > HyBot whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
 >
-> • NOTE: INI SC GAK BISA BUAT SESSION DI TERMUX YA, JADI KALIAN CARI SESSION DULU PAKAI SC LAIN 
-> ~ https://telegra.ph/file/d3e5c550e07475667e867.jpg
+> • NOTE: INI SC GAK BISA BUAT SESSION DI TERMUX YA, JADI KALIAN CARI SESSION DULU PAKAI SC LAIN
 > • rekomendasi sc buat cari session [disini](https://github.com/ilmanhdyt/ShiraoriBOT-Md)
 >
 > • NOTE: Pastikan Jaringan kalian lancar dan device kalian bagus:v, 
